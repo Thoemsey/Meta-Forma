@@ -1,6 +1,6 @@
 ﻿namespace Meta_Forma
 {
-    partial class Form1
+    partial class Hauptmenu
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // Hauptmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(621, 518);
-            this.Name = "Form1";
+            this.Name = "Hauptmenu";
             this.Text = "Meta-Forma";
             this.ResumeLayout(false);
 

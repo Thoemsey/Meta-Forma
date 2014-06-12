@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Meta_Forma
 {
-    public partial class Form1 : Form
+    public partial class Spielfeld : Form
     {
-        public Form1()
+        public Spielfeld()
         {
             InitializeComponent();
         }
