@@ -16,5 +16,10 @@ namespace Meta_Forma
         {
             InitializeComponent();
         }
+
+        private void Schwierigkeitsauswahl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
