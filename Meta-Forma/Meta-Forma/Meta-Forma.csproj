@@ -81,14 +81,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\blau.png" />
+    <Content Include="Resources\blauHover.png" />
     <Content Include="Resources\gelb.png" />
+    <Content Include="Resources\gelbHover.png" />
     <Content Include="Resources\gruen.png" />
+    <Content Include="Resources\gruenHover.png" />
     <Content Include="Resources\orange.png" />
+    <Content Include="Resources\orangeHover.png" />
     <Content Include="Resources\rot.png" />
+    <Content Include="Resources\rotHover.png" />
     <Content Include="Resources\violett.png" />
+    <Content Include="Resources\violettHover.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
