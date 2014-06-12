@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(287, 315);
+            this.ClientSize = new System.Drawing.Size(338, 315);
             this.Name = "Schwierigkeitsauswahl";
             this.Text = "Meta-Forma";
             this.ResumeLayout(false);
