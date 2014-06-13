@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="level">
+          <Key>
+            <PropertyRef Name="level_id" />
+          </Key>
+          <Property Name="level_id" Type="int" Nullable="false" />
+          <Property Name="schwierigkeit" Type="int" />
+          <Property Name="regeln" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="loesung">
+          <Key>
+            <PropertyRef Name="loesung_id" />
+          </Key>
+          <Property Name="loesung_id" Type="int" Nullable="false" />
+          <Property Name="id_level" Type="int" />
+          <Property Name="oben_links" Type="varchar" MaxLength="20" />
+          <Property Name="loesung_code" Type="varchar" MaxLength="9" />
+        </EntityType>
+        <Association Name="FK_loesung_level">
+          <End Role="level" Type="Self.level" Multiplicity="0..1" />
+          <End Role="loesung" Type="Self.loesung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="level">
+              <PropertyRef Name="level_id" />
+            </Principal>
+            <Dependent Role="loesung">
+              <PropertyRef Name="id_level" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="level" EntityType="Self.level" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="loesung" EntityType="Self.loesung" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_loesung_level" Association="Self.FK_loesung_level">
+            <End Role="level" EntitySet="level" />
+            <End Role="loesung" EntitySet="loesung" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="level">
+          <Key>
+            <PropertyRef Name="level_id" />
+          </Key>
+          <Property Name="level_id" Type="Int32" Nullable="false" />
+          <Property Name="schwierigkeit" Type="Int32" />
+          <NavigationProperty Name="loesung" Relationship="Model.FK_loesung_level" FromRole="level" ToRole="loesung" />
+          <Property Name="regeln" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="loesung">
+          <Key>
+            <PropertyRef Name="loesung_id" />
+          </Key>
+          <Property Name="loesung_id" Type="Int32" Nullable="false" />
+          <Property Name="id_level" Type="Int32" />
+          <NavigationProperty Name="level" Relationship="Model.FK_loesung_level" FromRole="loesung" ToRole="level" />
+          <Property Name="loesung_code" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="level" EntityType="Self.level" />
+          <EntitySet Name="loesung" EntityType="Self.loesung" />
+          <AssociationSet Name="FK_loesung_level" Association="Model.FK_loesung_level">
+            <End Role="level" EntitySet="level" />
+            <End Role="loesung" EntitySet="loesung" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK_loesung_level">
+          <End Type="Model.level" Role="level" Multiplicity="0..1" />
+          <End Type="Model.loesung" Role="loesung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="level">
+              <PropertyRef Name="level_id" />
+            </Principal>
+            <Dependent Role="loesung">
+              <PropertyRef Name="id_level" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="level">
+            <EntityTypeMapping TypeName="Model.level">
+              <MappingFragment StoreEntitySet="level">
+                <ScalarProperty Name="regeln" ColumnName="regeln" />
+                <ScalarProperty Name="level_id" ColumnName="level_id" />
+                <ScalarProperty Name="schwierigkeit" ColumnName="schwierigkeit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="loesung">
+            <EntityTypeMapping TypeName="Model.loesung">
+              <MappingFragment StoreEntitySet="loesung">
+                <ScalarProperty Name="loesung_code" ColumnName="loesung_code" />
+                <ScalarProperty Name="loesung_id" ColumnName="loesung_id" />
+                <ScalarProperty Name="id_level" ColumnName="id_level" />
+                </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Kein" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
