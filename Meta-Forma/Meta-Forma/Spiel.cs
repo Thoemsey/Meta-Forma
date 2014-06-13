@@ -42,6 +42,7 @@ namespace Meta_Forma
         private void cmd_beenden_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
 
         private void cmd_zumSpiel_Click(object sender, EventArgs e)
@@ -117,7 +118,17 @@ namespace Meta_Forma
 
         private void cmd_zurueckschwkt_Click(object sender, EventArgs e)
         {
+            tabControl.SelectedTab = tbp_schwierigkeit;
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tbp_spielfeld;
+        }
+
+        private void cmd_zuruecklvl_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tbp_level;
         }
 
 

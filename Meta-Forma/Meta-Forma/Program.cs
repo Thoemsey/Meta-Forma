@@ -17,6 +17,7 @@ namespace Meta_Forma
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             SpielController spielController = new SpielController(new Spiel());
+            spielController.Start();
             Application.Run();
         }
     }

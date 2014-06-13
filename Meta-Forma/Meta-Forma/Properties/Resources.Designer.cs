@@ -93,6 +93,16 @@ namespace Meta_Forma.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gelb1 {
+            get {
+                object obj = ResourceManager.GetObject("gelb1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gelbHover {
             get {
                 object obj = ResourceManager.GetObject("gelbHover", resourceCulture);
@@ -166,6 +176,16 @@ namespace Meta_Forma.Properties {
         internal static System.Drawing.Bitmap rotHover {
             get {
                 object obj = ResourceManager.GetObject("rotHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spielfeld {
+            get {
+                object obj = ResourceManager.GetObject("spielfeld", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
