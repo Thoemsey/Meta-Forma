@@ -76,12 +76,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Spielfeld.cs">
+    <Compile Include="Spiel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Spielfeld.Designer.cs">
-      <DependentUpon>Spielfeld.cs</DependentUpon>
+    <Compile Include="Spiel.Designer.cs">
+      <DependentUpon>Spiel.cs</DependentUpon>
     </Compile>
+    <Compile Include="SpielController.cs" />
     <Compile Include="TablessControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -95,8 +96,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Spielfeld.resx">
-      <DependentUpon>Spielfeld.cs</DependentUpon>
+    <EmbeddedResource Include="Spiel.resx">
+      <DependentUpon>Spiel.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -133,12 +134,21 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\blau.png" />
-    <Content Include="Resources\gelb.png" />
-    <Content Include="Resources\gruen.png" />
-    <Content Include="Resources\orange.png" />
-    <Content Include="Resources\rot.png" />
-    <Content Include="Resources\violett.png" />
+    <Content Include="Resources\ampel\blau.png" />
+    <Content Include="Resources\ampel\blauHover.png" />
+    <Content Include="Resources\ampel\gelb.png" />
+    <Content Include="Resources\ampel\gelbHover.png" />
+    <Content Include="Resources\ampel\gruen.png" />
+    <Content Include="Resources\ampel\gruenHover.png" />
+    <Content Include="Resources\ampel\orange.png" />
+    <Content Include="Resources\ampel\orangeHover.png" />
+    <Content Include="Resources\pfeil.png" />
+    <Content Include="Resources\ampel\rot.png" />
+    <Content Include="Resources\ampel\rotHover.png" />
+    <Content Include="Resources\ampel\violett.png" />
+    <Content Include="Resources\ampel\violettHover.png" />
+    <Content Include="Resources\Spielfeld\gelb1.jpg" />
+    <Content Include="Resources\Spielfeld\spielfeld.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
