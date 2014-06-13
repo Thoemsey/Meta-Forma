@@ -143,6 +143,16 @@ namespace Meta_Forma.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pfeil {
+            get {
+                object obj = ResourceManager.GetObject("pfeil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rot {
             get {
                 object obj = ResourceManager.GetObject("rot", resourceCulture);

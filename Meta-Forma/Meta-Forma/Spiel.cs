@@ -10,12 +10,14 @@ using System.Windows.Forms;
 
 namespace Meta_Forma
 {
-    public partial class Spielfeld : Form
+    public partial class Spiel : Form
     {
-        public Spielfeld()
+        private SpielController controller;
+
+        public Spiel()
         {
             InitializeComponent();
-            
+
             pic_gelb.MouseEnter += new System.EventHandler(this.pic_gelb_MouseEnter);
             pic_gelb.MouseLeave += new System.EventHandler(this.pic_gelb_MouseLeave);
             pic_orange.MouseEnter += new System.EventHandler(this.pic_orange_MouseEnter);
@@ -29,6 +31,13 @@ namespace Meta_Forma
             pic_rot.MouseEnter += new System.EventHandler(this.pic_rot_MouseEnter);
             pic_rot.MouseLeave += new System.EventHandler(this.pic_rot_MouseLeave);
         }
+        
+        public SpielController Controller
+        {
+            get { return controller; }
+            set { controller = value; }
+        }
+        
 
         private void cmd_beenden_Click(object sender, EventArgs e)
         {
@@ -94,9 +103,23 @@ namespace Meta_Forma
 
         }
 
-        private void tbp_schwierigkeit_Click(object sender, EventArgs e)
+
+
+        private void pic_rot_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tbp_level;
+        }
+
+        private void cmd_zurueckhptm_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tbp_menu;
+        }
+
+        private void cmd_zurueckschwkt_Click(object sender, EventArgs e)
         {
 
         }
+
+
     }
 }

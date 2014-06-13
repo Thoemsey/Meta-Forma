@@ -1,6 +1,6 @@
 ﻿namespace Meta_Forma
 {
-    partial class Spielfeld
+    partial class Spiel
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Spielfeld));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Spiel));
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.tabControl = new TablessControl();
             this.tbp_menu = new System.Windows.Forms.TabPage();
             this.cmd_beenden = new System.Windows.Forms.Button();
             this.cmd_zumSpiel = new System.Windows.Forms.Button();
             this.tbp_schwierigkeit = new System.Windows.Forms.TabPage();
+            this.cmd_zurueckhptm = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txt_leicht = new System.Windows.Forms.TextBox();
+            this.txt_schwierig = new System.Windows.Forms.TextBox();
+            this.txt_info = new System.Windows.Forms.TextBox();
             this.pnl_ampel = new System.Windows.Forms.Panel();
             this.pic_rot = new System.Windows.Forms.PictureBox();
             this.pic_blau = new System.Windows.Forms.PictureBox();
@@ -44,10 +49,13 @@
             this.pic_orange = new System.Windows.Forms.PictureBox();
             this.pic_gelb = new System.Windows.Forms.PictureBox();
             this.tbp_level = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.tbp_spielfeld = new System.Windows.Forms.TabPage();
+            this.cmd_zurueckschwkt = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tbp_menu.SuspendLayout();
             this.tbp_schwierigkeit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl_ampel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_rot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_blau)).BeginInit();
@@ -55,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_gruen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_orange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_gelb)).BeginInit();
+            this.tbp_level.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIcon1
@@ -76,6 +85,7 @@
             // 
             // tbp_menu
             // 
+            this.tbp_menu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tbp_menu.Controls.Add(this.cmd_beenden);
             this.tbp_menu.Controls.Add(this.cmd_zumSpiel);
             this.tbp_menu.Location = new System.Drawing.Point(4, 25);
@@ -88,26 +98,43 @@
             // 
             // cmd_beenden
             // 
+            this.cmd_beenden.BackColor = System.Drawing.Color.Red;
+            this.cmd_beenden.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.cmd_beenden.FlatAppearance.BorderSize = 2;
+            this.cmd_beenden.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.cmd_beenden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_beenden.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmd_beenden.Location = new System.Drawing.Point(143, 475);
             this.cmd_beenden.Name = "cmd_beenden";
-            this.cmd_beenden.Size = new System.Drawing.Size(665, 99);
+            this.cmd_beenden.Size = new System.Drawing.Size(665, 100);
             this.cmd_beenden.TabIndex = 1;
             this.cmd_beenden.Text = "Beenden";
-            this.cmd_beenden.UseVisualStyleBackColor = true;
+            this.cmd_beenden.UseVisualStyleBackColor = false;
             this.cmd_beenden.Click += new System.EventHandler(this.cmd_beenden_Click);
             // 
             // cmd_zumSpiel
             // 
-            this.cmd_zumSpiel.Location = new System.Drawing.Point(143, 219);
+            this.cmd_zumSpiel.BackColor = System.Drawing.Color.Red;
+            this.cmd_zumSpiel.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.cmd_zumSpiel.FlatAppearance.BorderSize = 2;
+            this.cmd_zumSpiel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.cmd_zumSpiel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_zumSpiel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmd_zumSpiel.Location = new System.Drawing.Point(143, 348);
             this.cmd_zumSpiel.Name = "cmd_zumSpiel";
-            this.cmd_zumSpiel.Size = new System.Drawing.Size(666, 204);
+            this.cmd_zumSpiel.Size = new System.Drawing.Size(665, 100);
             this.cmd_zumSpiel.TabIndex = 0;
             this.cmd_zumSpiel.Text = "zum Spiel";
-            this.cmd_zumSpiel.UseVisualStyleBackColor = true;
+            this.cmd_zumSpiel.UseVisualStyleBackColor = false;
             this.cmd_zumSpiel.Click += new System.EventHandler(this.cmd_zumSpiel_Click);
             // 
             // tbp_schwierigkeit
             // 
+            this.tbp_schwierigkeit.Controls.Add(this.cmd_zurueckhptm);
+            this.tbp_schwierigkeit.Controls.Add(this.pictureBox1);
+            this.tbp_schwierigkeit.Controls.Add(this.txt_leicht);
+            this.tbp_schwierigkeit.Controls.Add(this.txt_schwierig);
+            this.tbp_schwierigkeit.Controls.Add(this.txt_info);
             this.tbp_schwierigkeit.Controls.Add(this.pnl_ampel);
             this.tbp_schwierigkeit.Location = new System.Drawing.Point(4, 25);
             this.tbp_schwierigkeit.Name = "tbp_schwierigkeit";
@@ -116,7 +143,64 @@
             this.tbp_schwierigkeit.TabIndex = 1;
             this.tbp_schwierigkeit.Text = "tbp_schwierigkeit";
             this.tbp_schwierigkeit.UseVisualStyleBackColor = true;
-            this.tbp_schwierigkeit.Click += new System.EventHandler(this.tbp_schwierigkeit_Click);
+            // 
+            // cmd_zurueckhptm
+            // 
+            this.cmd_zurueckhptm.BackColor = System.Drawing.Color.Red;
+            this.cmd_zurueckhptm.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.cmd_zurueckhptm.FlatAppearance.BorderSize = 2;
+            this.cmd_zurueckhptm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.cmd_zurueckhptm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_zurueckhptm.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmd_zurueckhptm.Location = new System.Drawing.Point(91, 545);
+            this.cmd_zurueckhptm.Name = "cmd_zurueckhptm";
+            this.cmd_zurueckhptm.Size = new System.Drawing.Size(409, 100);
+            this.cmd_zurueckhptm.TabIndex = 5;
+            this.cmd_zurueckhptm.Text = "zurück";
+            this.cmd_zurueckhptm.UseVisualStyleBackColor = false;
+            this.cmd_zurueckhptm.Click += new System.EventHandler(this.cmd_zurueckhptm_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Meta_Forma.Properties.Resources.pfeil;
+            this.pictureBox1.Location = new System.Drawing.Point(586, 95);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 550);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txt_leicht
+            // 
+            this.txt_leicht.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_leicht.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_leicht.HideSelection = false;
+            this.txt_leicht.Location = new System.Drawing.Point(572, 654);
+            this.txt_leicht.Name = "txt_leicht";
+            this.txt_leicht.Size = new System.Drawing.Size(73, 31);
+            this.txt_leicht.TabIndex = 3;
+            this.txt_leicht.Text = "leicht";
+            // 
+            // txt_schwierig
+            // 
+            this.txt_schwierig.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_schwierig.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_schwierig.HideSelection = false;
+            this.txt_schwierig.Location = new System.Drawing.Point(543, 51);
+            this.txt_schwierig.Name = "txt_schwierig";
+            this.txt_schwierig.Size = new System.Drawing.Size(133, 31);
+            this.txt_schwierig.TabIndex = 2;
+            this.txt_schwierig.Text = "schwierig";
+            // 
+            // txt_info
+            // 
+            this.txt_info.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_info.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_info.HideSelection = false;
+            this.txt_info.Location = new System.Drawing.Point(91, 242);
+            this.txt_info.Name = "txt_info";
+            this.txt_info.Size = new System.Drawing.Size(409, 31);
+            this.txt_info.TabIndex = 1;
+            this.txt_info.Text = "Wähle deinen Schwierigkeitsgrad";
             // 
             // pnl_ampel
             // 
@@ -127,7 +211,7 @@
             this.pnl_ampel.Controls.Add(this.pic_gruen);
             this.pnl_ampel.Controls.Add(this.pic_orange);
             this.pnl_ampel.Controls.Add(this.pic_gelb);
-            this.pnl_ampel.Location = new System.Drawing.Point(417, 3);
+            this.pnl_ampel.Location = new System.Drawing.Point(682, 3);
             this.pnl_ampel.Name = "pnl_ampel";
             this.pnl_ampel.Size = new System.Drawing.Size(156, 715);
             this.pnl_ampel.TabIndex = 0;
@@ -140,6 +224,7 @@
             this.pic_rot.Size = new System.Drawing.Size(120, 120);
             this.pic_rot.TabIndex = 1;
             this.pic_rot.TabStop = false;
+            this.pic_rot.Click += new System.EventHandler(this.pic_rot_Click);
             // 
             // pic_blau
             // 
@@ -190,6 +275,8 @@
             // 
             // tbp_level
             // 
+            this.tbp_level.Controls.Add(this.cmd_zurueckschwkt);
+            this.tbp_level.Controls.Add(this.button1);
             this.tbp_level.Location = new System.Drawing.Point(4, 25);
             this.tbp_level.Name = "tbp_level";
             this.tbp_level.Padding = new System.Windows.Forms.Padding(3);
@@ -197,6 +284,15 @@
             this.tbp_level.TabIndex = 2;
             this.tbp_level.Text = "tbp_level";
             this.tbp_level.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(219, 159);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(521, 146);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // tbp_spielfeld
             // 
@@ -207,6 +303,22 @@
             this.tbp_spielfeld.TabIndex = 3;
             this.tbp_spielfeld.Text = "tbp_spielfeld";
             this.tbp_spielfeld.UseVisualStyleBackColor = true;
+            // 
+            // cmd_zurueckschwkt
+            // 
+            this.cmd_zurueckschwkt.BackColor = System.Drawing.Color.Red;
+            this.cmd_zurueckschwkt.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.cmd_zurueckschwkt.FlatAppearance.BorderSize = 2;
+            this.cmd_zurueckschwkt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.cmd_zurueckschwkt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_zurueckschwkt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmd_zurueckschwkt.Location = new System.Drawing.Point(298, 561);
+            this.cmd_zurueckschwkt.Name = "cmd_zurueckschwkt";
+            this.cmd_zurueckschwkt.Size = new System.Drawing.Size(409, 100);
+            this.cmd_zurueckschwkt.TabIndex = 6;
+            this.cmd_zurueckschwkt.Text = "zurück";
+            this.cmd_zurueckschwkt.UseVisualStyleBackColor = false;
+            this.cmd_zurueckschwkt.Click += new System.EventHandler(this.cmd_zurueckschwkt_Click);
             // 
             // Spielfeld
             // 
@@ -220,6 +332,8 @@
             this.tabControl.ResumeLayout(false);
             this.tbp_menu.ResumeLayout(false);
             this.tbp_schwierigkeit.ResumeLayout(false);
+            this.tbp_schwierigkeit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnl_ampel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_rot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_blau)).EndInit();
@@ -227,6 +341,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_gruen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_orange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_gelb)).EndInit();
+            this.tbp_level.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -248,5 +363,12 @@
         private System.Windows.Forms.PictureBox pic_blau;
         private System.Windows.Forms.PictureBox pic_gruen;
         private System.Windows.Forms.PictureBox pic_orange;
+        private System.Windows.Forms.TextBox txt_info;
+        private System.Windows.Forms.TextBox txt_schwierig;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txt_leicht;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cmd_zurueckhptm;
+        private System.Windows.Forms.Button cmd_zurueckschwkt;
     }
 }
