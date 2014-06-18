@@ -33,7 +33,6 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.tabControl = new TablessControl();
             this.tbp_menu = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.cmd_beenden = new System.Windows.Forms.Button();
             this.cmd_zumSpiel = new System.Windows.Forms.Button();
             this.tbp_schwierigkeit = new System.Windows.Forms.TabPage();
@@ -96,7 +95,6 @@
             // tbp_menu
             // 
             this.tbp_menu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tbp_menu.Controls.Add(this.button1);
             this.tbp_menu.Controls.Add(this.cmd_beenden);
             this.tbp_menu.Controls.Add(this.cmd_zumSpiel);
             this.tbp_menu.Location = new System.Drawing.Point(4, 25);
@@ -107,16 +105,6 @@
             this.tbp_menu.TabIndex = 0;
             this.tbp_menu.Text = "tbp_menu";
             this.tbp_menu.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(417, 139);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // cmd_beenden
             // 
@@ -498,6 +486,5 @@
         private System.Windows.Forms.PictureBox pic_regeln;
         private System.Windows.Forms.Button cmd_zuruecklvl;
         private System.Windows.Forms.PictureBox pic_spielfeld;
-        private System.Windows.Forms.Button button1;
     }
 }
