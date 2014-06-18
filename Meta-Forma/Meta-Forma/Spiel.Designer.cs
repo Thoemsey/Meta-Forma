@@ -57,6 +57,7 @@
             this.cmd_zuruecklvl = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pic_regeln = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl.SuspendLayout();
             this.tbp_menu.SuspendLayout();
             this.tbp_schwierigkeit.SuspendLayout();
@@ -96,6 +97,7 @@
             // tbp_menu
             // 
             this.tbp_menu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tbp_menu.Controls.Add(this.textBox1);
             this.tbp_menu.Controls.Add(this.cmd_beenden);
             this.tbp_menu.Controls.Add(this.cmd_zumSpiel);
             this.tbp_menu.Location = new System.Drawing.Point(4, 25);
@@ -428,6 +430,13 @@
             this.pic_regeln.TabIndex = 0;
             this.pic_regeln.TabStop = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(330, 160);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 2;
+            // 
             // Spiel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -439,6 +448,7 @@
             this.Text = "Spielfeld";
             this.tabControl.ResumeLayout(false);
             this.tbp_menu.ResumeLayout(false);
+            this.tbp_menu.PerformLayout();
             this.tbp_schwierigkeit.ResumeLayout(false);
             this.tbp_schwierigkeit.PerformLayout();
             this.pnl_ampel.ResumeLayout(false);
@@ -486,5 +496,6 @@
         private System.Windows.Forms.PictureBox pic_regeln;
         private System.Windows.Forms.Button cmd_zuruecklvl;
         private System.Windows.Forms.PictureBox pic_spielfeld;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
