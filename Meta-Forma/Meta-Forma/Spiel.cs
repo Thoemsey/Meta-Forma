@@ -132,5 +132,17 @@ namespace Meta_Forma
         }
 
 
+        //Tets Bdrag&Drop button1
+
+        private void test_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            test.DoDragDrop(test, DragDropEffects.Move);
+        }
+
+
+
+
+
+
     }
 }
