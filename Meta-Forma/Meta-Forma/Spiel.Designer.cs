@@ -85,11 +85,12 @@
             this.tabControl.Controls.Add(this.tbp_schwierigkeit);
             this.tabControl.Controls.Add(this.tbp_level);
             this.tabControl.Controls.Add(this.tbp_spielfeld);
-            this.tabControl.Location = new System.Drawing.Point(3, 1);
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1005, 722);
+            this.tabControl.Size = new System.Drawing.Size(1006, 723);
             this.tabControl.TabIndex = 0;
             // 
             // tbp_menu
@@ -101,7 +102,7 @@
             this.tbp_menu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbp_menu.Name = "tbp_menu";
             this.tbp_menu.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbp_menu.Size = new System.Drawing.Size(997, 693);
+            this.tbp_menu.Size = new System.Drawing.Size(998, 694);
             this.tbp_menu.TabIndex = 0;
             this.tbp_menu.Text = "tbp_menu";
             this.tbp_menu.UseVisualStyleBackColor = true;
@@ -152,7 +153,7 @@
             this.tbp_schwierigkeit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbp_schwierigkeit.Name = "tbp_schwierigkeit";
             this.tbp_schwierigkeit.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbp_schwierigkeit.Size = new System.Drawing.Size(997, 693);
+            this.tbp_schwierigkeit.Size = new System.Drawing.Size(998, 694);
             this.tbp_schwierigkeit.TabIndex = 1;
             this.tbp_schwierigkeit.Text = "tbp_schwierigkeit";
             this.tbp_schwierigkeit.UseVisualStyleBackColor = true;
@@ -310,7 +311,7 @@
             this.tbp_level.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbp_level.Name = "tbp_level";
             this.tbp_level.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbp_level.Size = new System.Drawing.Size(997, 693);
+            this.tbp_level.Size = new System.Drawing.Size(998, 694);
             this.tbp_level.TabIndex = 2;
             this.tbp_level.Text = "tbp_level";
             this.tbp_level.UseVisualStyleBackColor = true;
@@ -375,7 +376,7 @@
             this.tbp_spielfeld.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbp_spielfeld.Name = "tbp_spielfeld";
             this.tbp_spielfeld.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbp_spielfeld.Size = new System.Drawing.Size(997, 693);
+            this.tbp_spielfeld.Size = new System.Drawing.Size(998, 694);
             this.tbp_spielfeld.TabIndex = 3;
             this.tbp_spielfeld.Text = "tbp_spielfeld";
             this.tbp_spielfeld.UseVisualStyleBackColor = true;
@@ -429,8 +430,7 @@
             // 
             // Spiel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1006, 723);
             this.Controls.Add(this.tabControl);
