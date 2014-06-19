@@ -17,7 +17,6 @@ namespace Meta_Forma
         public Spiel()
         {
             InitializeComponent();
-
             pic_gelb.MouseEnter += new System.EventHandler(this.pic_gelb_MouseEnter);
             pic_gelb.MouseLeave += new System.EventHandler(this.pic_gelb_MouseLeave);
             pic_orange.MouseEnter += new System.EventHandler(this.pic_orange_MouseEnter);
@@ -174,6 +173,12 @@ namespace Meta_Forma
         }
 
         
+        private void Spiel_Closing(object sender, FormClosingEventArgs e)
+        {
+            //Handle event here
+            System.Windows.Forms.Application.Exit();
+        }
+
 
         //Tets Bdrag&Drop button1
 
