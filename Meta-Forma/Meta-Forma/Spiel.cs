@@ -13,6 +13,7 @@ namespace Meta_Forma
     public partial class Spiel : Form
     {
         private SpielController controller;
+        private List<int> lvl;
 
         public Spiel()
         {
@@ -68,6 +69,7 @@ namespace Meta_Forma
         private void pic_gruen_MouseEnter(object sender, EventArgs e)
         {
             pic_gruen.Image = Properties.Resources.gruenHover;
+            
         }
         private void pic_gruen_MouseLeave(object sender, EventArgs e)
         {
@@ -124,6 +126,13 @@ namespace Meta_Forma
 
         private void button1_Click(object sender, EventArgs e)
         {
+            setLvl(lvl[0]);
+            tabControl.SelectedTab = tbp_spielfeld;
+        }
+
+        private void cmd_lvl2_Click(object sender, EventArgs e)
+        {
+            setLvl(lvl[1]);
             tabControl.SelectedTab = tbp_spielfeld;
         }
 
@@ -161,13 +170,16 @@ namespace Meta_Forma
 
         private void setLvl(int levelId)
         {
-
+            String rules = Controller.DB.getRulesById(levelId);
+            //Image regel = Image.FromFile(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal)+ @"\gelb2.jpg");
+            //pic_regeln.Image = regel;
+            
         }
 
 
         private void setLvlText(int diffId)
         {
-            List<int> lvl = Controller.DB.getLvlByDifficulty(diffId);
+            lvl = Controller.DB.getLvlByDifficulty(diffId);
             cmd_lvl1.Text = lvl[0].ToString();
             cmd_lvl2.Text = lvl[1].ToString();
         }
@@ -178,6 +190,8 @@ namespace Meta_Forma
             //Handle event here
             System.Windows.Forms.Application.Exit();
         }
+
+        
 
 
         //Tets Bdrag&Drop button1

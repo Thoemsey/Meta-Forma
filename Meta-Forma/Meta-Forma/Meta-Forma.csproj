@@ -129,7 +129,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -148,8 +150,19 @@
     <Content Include="Resources\ampel\rotHover.png" />
     <Content Include="Resources\ampel\violett.png" />
     <Content Include="Resources\ampel\violettHover.png" />
+    <Content Include="Resources\Spielfeld\blau41.jpg" />
+    <Content Include="Resources\Spielfeld\blau42.jpg" />
     <Content Include="Resources\Spielfeld\gelb1.jpg" />
+    <Content Include="Resources\Spielfeld\gelb2.jpg" />
+    <Content Include="Resources\Spielfeld\gruen30.jpg" />
+    <Content Include="Resources\Spielfeld\gruen31.jpg" />
+    <Content Include="Resources\Spielfeld\orange15.jpg" />
+    <Content Include="Resources\Spielfeld\orange20.jpg" />
+    <Content Include="Resources\Spielfeld\rot50.jpg" />
+    <Content Include="Resources\Spielfeld\rot51.jpg" />
     <Content Include="Resources\Spielfeld\spielfeld.png" />
+    <Content Include="Resources\Spielfeld\violett46.jpg" />
+    <Content Include="Resources\Spielfeld\violett47.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

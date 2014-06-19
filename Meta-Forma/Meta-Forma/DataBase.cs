@@ -12,8 +12,7 @@ namespace Meta_Forma
     public class DataBase
     {
         private SpielController controller;
-        int schwierigkeit;
-        int level;
+        
         
 
         public SpielController Controller
@@ -21,7 +20,7 @@ namespace Meta_Forma
             get { return controller; }
             set { controller = value; }
         }
-        public string getLoesungById(int id)
+        public String getLoesungById(int id)
         {
             using (Entities context = new Entities())
             {

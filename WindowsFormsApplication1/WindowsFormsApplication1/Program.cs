@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Meta_Forma
+namespace WindowsFormsApplication1
 {
     static class Program
     {
@@ -16,16 +16,7 @@ namespace Meta_Forma
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            SpielController spielController = new SpielController(new Spiel(), new DataBase());
-
-            
-
-            spielController.Start();
-
-            
-
-
-            Application.Run();
+            Application.Run(new Form1());
         }
     }
 }

@@ -335,6 +335,7 @@
             this.cmd_lvl2.TabIndex = 7;
             this.cmd_lvl2.Text = "000";
             this.cmd_lvl2.UseVisualStyleBackColor = false;
+            this.cmd_lvl2.Click += new System.EventHandler(this.cmd_lvl2_Click);
             // 
             // cmd_zurueckschwkt
             // 
