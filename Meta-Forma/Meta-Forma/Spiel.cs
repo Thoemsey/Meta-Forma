@@ -139,6 +139,7 @@ namespace Meta_Forma
         private void cmd_zuruecklvl_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tbp_level;
+            pic_regeln.Image = Properties.Resources.loading;
         }
 
         private void pic_violett_Click(object sender, EventArgs e)
@@ -171,9 +172,10 @@ namespace Meta_Forma
         private void setLvl(int levelId)
         {
             String rules = Controller.DB.getRulesById(levelId);
-            //Image regel = Image.FromFile(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal)+ @"\gelb2.jpg");
-            //pic_regeln.Image = regel;
-            
+
+            //pic_regeln.Image = Properties.Resources.rot50;
+            pic_regeln.ImageLocation = Application.StartupPath+"\\..\\..\\Resources\\Spielfeld\\"+rules+".jpg";
+            Console.Write(Application.StartupPath);
         }
 
 

@@ -41,6 +41,13 @@
             this.txt_schwierig = new System.Windows.Forms.TextBox();
             this.txt_info = new System.Windows.Forms.TextBox();
             this.pnl_ampel = new System.Windows.Forms.Panel();
+            this.tbp_level = new System.Windows.Forms.TabPage();
+            this.cmd_lvl2 = new System.Windows.Forms.Button();
+            this.cmd_zurueckschwkt = new System.Windows.Forms.Button();
+            this.cmd_lvl1 = new System.Windows.Forms.Button();
+            this.tbp_spielfeld = new System.Windows.Forms.TabPage();
+            this.cmd_zuruecklvl = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pic_rot = new System.Windows.Forms.PictureBox();
             this.pic_blau = new System.Windows.Forms.PictureBox();
             this.pic_violett = new System.Windows.Forms.PictureBox();
@@ -48,19 +55,14 @@
             this.pic_orange = new System.Windows.Forms.PictureBox();
             this.pic_gelb = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tbp_level = new System.Windows.Forms.TabPage();
-            this.cmd_lvl2 = new System.Windows.Forms.Button();
-            this.cmd_zurueckschwkt = new System.Windows.Forms.Button();
-            this.cmd_lvl1 = new System.Windows.Forms.Button();
-            this.tbp_spielfeld = new System.Windows.Forms.TabPage();
             this.pic_spielfeld = new System.Windows.Forms.PictureBox();
-            this.cmd_zuruecklvl = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pic_regeln = new System.Windows.Forms.PictureBox();
             this.tabControl.SuspendLayout();
             this.tbp_menu.SuspendLayout();
             this.tbp_schwierigkeit.SuspendLayout();
             this.pnl_ampel.SuspendLayout();
+            this.tbp_level.SuspendLayout();
+            this.tbp_spielfeld.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_rot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_blau)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_violett)).BeginInit();
@@ -68,8 +70,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_orange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_gelb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tbp_level.SuspendLayout();
-            this.tbp_spielfeld.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_spielfeld)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_regeln)).BeginInit();
             this.SuspendLayout();
@@ -229,83 +229,6 @@
             this.pnl_ampel.Size = new System.Drawing.Size(157, 715);
             this.pnl_ampel.TabIndex = 0;
             // 
-            // pic_rot
-            // 
-            this.pic_rot.Image = ((System.Drawing.Image)(resources.GetObject("pic_rot.Image")));
-            this.pic_rot.Location = new System.Drawing.Point(16, 0);
-            this.pic_rot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pic_rot.Name = "pic_rot";
-            this.pic_rot.Size = new System.Drawing.Size(120, 121);
-            this.pic_rot.TabIndex = 1;
-            this.pic_rot.TabStop = false;
-            this.pic_rot.Click += new System.EventHandler(this.pic_rot_Click);
-            // 
-            // pic_blau
-            // 
-            this.pic_blau.Image = ((System.Drawing.Image)(resources.GetObject("pic_blau.Image")));
-            this.pic_blau.Location = new System.Drawing.Point(16, 238);
-            this.pic_blau.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pic_blau.Name = "pic_blau";
-            this.pic_blau.Size = new System.Drawing.Size(120, 121);
-            this.pic_blau.TabIndex = 1;
-            this.pic_blau.TabStop = false;
-            this.pic_blau.Click += new System.EventHandler(this.pic_blau_Click);
-            // 
-            // pic_violett
-            // 
-            this.pic_violett.Image = ((System.Drawing.Image)(resources.GetObject("pic_violett.Image")));
-            this.pic_violett.Location = new System.Drawing.Point(16, 119);
-            this.pic_violett.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pic_violett.Name = "pic_violett";
-            this.pic_violett.Size = new System.Drawing.Size(120, 121);
-            this.pic_violett.TabIndex = 1;
-            this.pic_violett.TabStop = false;
-            this.pic_violett.Click += new System.EventHandler(this.pic_violett_Click);
-            // 
-            // pic_gruen
-            // 
-            this.pic_gruen.Image = ((System.Drawing.Image)(resources.GetObject("pic_gruen.Image")));
-            this.pic_gruen.Location = new System.Drawing.Point(16, 357);
-            this.pic_gruen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pic_gruen.Name = "pic_gruen";
-            this.pic_gruen.Size = new System.Drawing.Size(120, 121);
-            this.pic_gruen.TabIndex = 1;
-            this.pic_gruen.TabStop = false;
-            this.pic_gruen.Click += new System.EventHandler(this.pic_gruen_Click);
-            // 
-            // pic_orange
-            // 
-            this.pic_orange.BackColor = System.Drawing.Color.Transparent;
-            this.pic_orange.Image = ((System.Drawing.Image)(resources.GetObject("pic_orange.Image")));
-            this.pic_orange.Location = new System.Drawing.Point(16, 476);
-            this.pic_orange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pic_orange.Name = "pic_orange";
-            this.pic_orange.Size = new System.Drawing.Size(120, 121);
-            this.pic_orange.TabIndex = 1;
-            this.pic_orange.TabStop = false;
-            this.pic_orange.Click += new System.EventHandler(this.pic_orange_Click);
-            // 
-            // pic_gelb
-            // 
-            this.pic_gelb.Image = ((System.Drawing.Image)(resources.GetObject("pic_gelb.Image")));
-            this.pic_gelb.Location = new System.Drawing.Point(16, 594);
-            this.pic_gelb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pic_gelb.Name = "pic_gelb";
-            this.pic_gelb.Size = new System.Drawing.Size(120, 121);
-            this.pic_gelb.TabIndex = 0;
-            this.pic_gelb.TabStop = false;
-            this.pic_gelb.Click += new System.EventHandler(this.pic_gelb_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Meta_Forma.Properties.Resources.pfeil;
-            this.pictureBox1.Location = new System.Drawing.Point(587, 95);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(29, 550);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // tbp_level
             // 
             this.tbp_level.Controls.Add(this.cmd_lvl2);
@@ -386,17 +309,6 @@
             this.tbp_spielfeld.TabIndex = 3;
             this.tbp_spielfeld.Text = "tbp_spielfeld";
             // 
-            // pic_spielfeld
-            // 
-            this.pic_spielfeld.Image = global::Meta_Forma.Properties.Resources.spielfeld;
-            this.pic_spielfeld.Location = new System.Drawing.Point(499, 14);
-            this.pic_spielfeld.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pic_spielfeld.Name = "pic_spielfeld";
-            this.pic_spielfeld.Size = new System.Drawing.Size(475, 475);
-            this.pic_spielfeld.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_spielfeld.TabIndex = 8;
-            this.pic_spielfeld.TabStop = false;
-            // 
             // cmd_zuruecklvl
             // 
             this.cmd_zuruecklvl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(201)))), ((int)(((byte)(230)))));
@@ -422,9 +334,97 @@
             this.panel1.Size = new System.Drawing.Size(971, 153);
             this.panel1.TabIndex = 1;
             // 
+            // pic_rot
+            // 
+            this.pic_rot.Image = ((System.Drawing.Image)(resources.GetObject("pic_rot.Image")));
+            this.pic_rot.Location = new System.Drawing.Point(16, 0);
+            this.pic_rot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pic_rot.Name = "pic_rot";
+            this.pic_rot.Size = new System.Drawing.Size(120, 121);
+            this.pic_rot.TabIndex = 1;
+            this.pic_rot.TabStop = false;
+            this.pic_rot.Click += new System.EventHandler(this.pic_rot_Click);
+            // 
+            // pic_blau
+            // 
+            this.pic_blau.Image = ((System.Drawing.Image)(resources.GetObject("pic_blau.Image")));
+            this.pic_blau.Location = new System.Drawing.Point(16, 238);
+            this.pic_blau.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pic_blau.Name = "pic_blau";
+            this.pic_blau.Size = new System.Drawing.Size(120, 121);
+            this.pic_blau.TabIndex = 1;
+            this.pic_blau.TabStop = false;
+            this.pic_blau.Click += new System.EventHandler(this.pic_blau_Click);
+            // 
+            // pic_violett
+            // 
+            this.pic_violett.Image = ((System.Drawing.Image)(resources.GetObject("pic_violett.Image")));
+            this.pic_violett.Location = new System.Drawing.Point(16, 119);
+            this.pic_violett.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pic_violett.Name = "pic_violett";
+            this.pic_violett.Size = new System.Drawing.Size(120, 121);
+            this.pic_violett.TabIndex = 1;
+            this.pic_violett.TabStop = false;
+            this.pic_violett.Click += new System.EventHandler(this.pic_violett_Click);
+            // 
+            // pic_gruen
+            // 
+            this.pic_gruen.Image = ((System.Drawing.Image)(resources.GetObject("pic_gruen.Image")));
+            this.pic_gruen.Location = new System.Drawing.Point(16, 357);
+            this.pic_gruen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pic_gruen.Name = "pic_gruen";
+            this.pic_gruen.Size = new System.Drawing.Size(120, 121);
+            this.pic_gruen.TabIndex = 1;
+            this.pic_gruen.TabStop = false;
+            this.pic_gruen.Click += new System.EventHandler(this.pic_gruen_Click);
+            // 
+            // pic_orange
+            // 
+            this.pic_orange.BackColor = System.Drawing.Color.Transparent;
+            this.pic_orange.Image = ((System.Drawing.Image)(resources.GetObject("pic_orange.Image")));
+            this.pic_orange.Location = new System.Drawing.Point(16, 476);
+            this.pic_orange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pic_orange.Name = "pic_orange";
+            this.pic_orange.Size = new System.Drawing.Size(120, 121);
+            this.pic_orange.TabIndex = 1;
+            this.pic_orange.TabStop = false;
+            this.pic_orange.Click += new System.EventHandler(this.pic_orange_Click);
+            // 
+            // pic_gelb
+            // 
+            this.pic_gelb.Image = ((System.Drawing.Image)(resources.GetObject("pic_gelb.Image")));
+            this.pic_gelb.Location = new System.Drawing.Point(16, 594);
+            this.pic_gelb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pic_gelb.Name = "pic_gelb";
+            this.pic_gelb.Size = new System.Drawing.Size(120, 121);
+            this.pic_gelb.TabIndex = 0;
+            this.pic_gelb.TabStop = false;
+            this.pic_gelb.Click += new System.EventHandler(this.pic_gelb_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Meta_Forma.Properties.Resources.pfeil;
+            this.pictureBox1.Location = new System.Drawing.Point(587, 95);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(29, 550);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pic_spielfeld
+            // 
+            this.pic_spielfeld.Image = global::Meta_Forma.Properties.Resources.spielfeld;
+            this.pic_spielfeld.Location = new System.Drawing.Point(499, 14);
+            this.pic_spielfeld.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pic_spielfeld.Name = "pic_spielfeld";
+            this.pic_spielfeld.Size = new System.Drawing.Size(475, 475);
+            this.pic_spielfeld.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_spielfeld.TabIndex = 8;
+            this.pic_spielfeld.TabStop = false;
+            // 
             // pic_regeln
             // 
-            this.pic_regeln.Image = global::Meta_Forma.Properties.Resources.gelb1;
+            this.pic_regeln.Image = global::Meta_Forma.Properties.Resources.loading;
             this.pic_regeln.Location = new System.Drawing.Point(3, 14);
             this.pic_regeln.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pic_regeln.Name = "pic_regeln";
@@ -448,6 +448,8 @@
             this.tbp_schwierigkeit.ResumeLayout(false);
             this.tbp_schwierigkeit.PerformLayout();
             this.pnl_ampel.ResumeLayout(false);
+            this.tbp_level.ResumeLayout(false);
+            this.tbp_spielfeld.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_rot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_blau)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_violett)).EndInit();
@@ -455,8 +457,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_orange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_gelb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tbp_level.ResumeLayout(false);
-            this.tbp_spielfeld.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_spielfeld)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_regeln)).EndInit();
             this.ResumeLayout(false);

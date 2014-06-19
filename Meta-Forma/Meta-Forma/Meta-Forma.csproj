@@ -156,6 +156,7 @@
     <Content Include="Resources\Spielfeld\gelb2.jpg" />
     <Content Include="Resources\Spielfeld\gruen30.jpg" />
     <Content Include="Resources\Spielfeld\gruen31.jpg" />
+    <Content Include="Resources\Spielfeld\loading.gif" />
     <Content Include="Resources\Spielfeld\orange15.jpg" />
     <Content Include="Resources\Spielfeld\orange20.jpg" />
     <Content Include="Resources\Spielfeld\rot50.jpg" />
