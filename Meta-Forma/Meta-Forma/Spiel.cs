@@ -14,6 +14,7 @@ namespace Meta_Forma
     {
         private SpielController controller;
         private List<int> lvl;
+        private int[] loesung = new int[9];
 
         public Spiel()
         {
@@ -127,12 +128,14 @@ namespace Meta_Forma
         private void button1_Click(object sender, EventArgs e)
         {
             setLvl(lvl[0]);
+            setLoesung(lvl[0]);
             tabControl.SelectedTab = tbp_spielfeld;
         }
 
         private void cmd_lvl2_Click(object sender, EventArgs e)
         {
             setLvl(lvl[1]);
+            setLoesung(lvl[1]);
             tabControl.SelectedTab = tbp_spielfeld;
         }
 
@@ -173,9 +176,7 @@ namespace Meta_Forma
         {
             String rules = Controller.DB.getRulesById(levelId);
 
-            //pic_regeln.Image = Properties.Resources.rot50;
             pic_regeln.ImageLocation = Application.StartupPath+"\\..\\..\\Resources\\Spielfeld\\"+rules+".jpg";
-            Console.Write(Application.StartupPath);
         }
 
 
@@ -184,6 +185,19 @@ namespace Meta_Forma
             lvl = Controller.DB.getLvlByDifficulty(diffId);
             cmd_lvl1.Text = lvl[0].ToString();
             cmd_lvl2.Text = lvl[1].ToString();
+        }
+
+        private void setLoesung(int lvlId)
+        {
+            String sol = Controller.DB.getLoesungById(lvlId);
+            for (int i = 0; i < sol.Length; i++)
+            {
+                char temp = sol.ElementAt(i);
+                loesung[i] = (int)Char.GetNumericValue(temp);
+                Console.Write(loesung[i]);
+            }
+            Console.Write("\n");
+
         }
 
         
