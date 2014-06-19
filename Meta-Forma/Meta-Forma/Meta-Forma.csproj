@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataBase.cs" />
     <Compile Include="level.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

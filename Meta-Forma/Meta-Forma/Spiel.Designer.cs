@@ -249,6 +249,7 @@
             this.pic_blau.Size = new System.Drawing.Size(120, 121);
             this.pic_blau.TabIndex = 1;
             this.pic_blau.TabStop = false;
+            this.pic_blau.Click += new System.EventHandler(this.pic_blau_Click);
             // 
             // pic_violett
             // 
@@ -259,6 +260,7 @@
             this.pic_violett.Size = new System.Drawing.Size(120, 121);
             this.pic_violett.TabIndex = 1;
             this.pic_violett.TabStop = false;
+            this.pic_violett.Click += new System.EventHandler(this.pic_violett_Click);
             // 
             // pic_gruen
             // 
@@ -269,6 +271,7 @@
             this.pic_gruen.Size = new System.Drawing.Size(120, 121);
             this.pic_gruen.TabIndex = 1;
             this.pic_gruen.TabStop = false;
+            this.pic_gruen.Click += new System.EventHandler(this.pic_gruen_Click);
             // 
             // pic_orange
             // 
@@ -280,6 +283,7 @@
             this.pic_orange.Size = new System.Drawing.Size(120, 121);
             this.pic_orange.TabIndex = 1;
             this.pic_orange.TabStop = false;
+            this.pic_orange.Click += new System.EventHandler(this.pic_orange_Click);
             // 
             // pic_gelb
             // 

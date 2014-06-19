@@ -101,13 +101,15 @@ namespace Meta_Forma
 
         private void pic_gelb_Click(object sender, EventArgs e)
         {
-
+            setLvlText(1);
+            tabControl.SelectedTab = tbp_level;
         }
 
 
 
         private void pic_rot_Click(object sender, EventArgs e)
         {
+            setLvlText(6);
             tabControl.SelectedTab = tbp_level;
         }
 
@@ -131,6 +133,47 @@ namespace Meta_Forma
             tabControl.SelectedTab = tbp_level;
         }
 
+        private void pic_violett_Click(object sender, EventArgs e)
+        {
+            setLvlText(5);
+            tabControl.SelectedTab = tbp_level;
+        }
+
+        private void pic_blau_Click(object sender, EventArgs e)
+        {
+            setLvlText(4);
+            tabControl.SelectedTab = tbp_level;
+        }
+
+        private void pic_gruen_Click(object sender, EventArgs e)
+        {
+            setLvlText(3);
+            tabControl.SelectedTab = tbp_level;
+        }
+
+        private void pic_orange_Click(object sender, EventArgs e)
+        {
+            setLvlText(2);
+            tabControl.SelectedTab = tbp_level;
+        }
+
+
+
+
+        private void setLvl(int levelId)
+        {
+
+        }
+
+
+        private void setLvlText(int diffId)
+        {
+            List<int> lvl = Controller.DB.getLvlByDifficulty(diffId);
+            cmd_lvl1.Text = lvl[0].ToString();
+            cmd_lvl2.Text = lvl[1].ToString();
+        }
+
+        
 
         //Tets Bdrag&Drop button1
 
