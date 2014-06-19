@@ -17,7 +17,6 @@ namespace Meta_Forma
         public Spiel()
         {
             InitializeComponent();
-
             pic_gelb.MouseEnter += new System.EventHandler(this.pic_gelb_MouseEnter);
             pic_gelb.MouseLeave += new System.EventHandler(this.pic_gelb_MouseLeave);
             pic_orange.MouseEnter += new System.EventHandler(this.pic_orange_MouseEnter);
@@ -37,7 +36,7 @@ namespace Meta_Forma
             get { return controller; }
             set { controller = value; }
         }
-        
+
 
         private void cmd_beenden_Click(object sender, EventArgs e)
         {
@@ -129,6 +128,12 @@ namespace Meta_Forma
         private void cmd_zuruecklvl_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tbp_level;
+        }
+
+        private void Spiel_Closing(object sender, FormClosingEventArgs e)
+        {
+            //Handle event here
+            System.Windows.Forms.Application.Exit();
         }
 
 

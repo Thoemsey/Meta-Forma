@@ -368,6 +368,7 @@
             // 
             // tbp_spielfeld
             // 
+            this.tbp_spielfeld.BackColor = System.Drawing.Color.White;
             this.tbp_spielfeld.Controls.Add(this.pic_spielfeld);
             this.tbp_spielfeld.Controls.Add(this.cmd_zuruecklvl);
             this.tbp_spielfeld.Controls.Add(this.panel1);
@@ -379,7 +380,6 @@
             this.tbp_spielfeld.Size = new System.Drawing.Size(998, 694);
             this.tbp_spielfeld.TabIndex = 3;
             this.tbp_spielfeld.Text = "tbp_spielfeld";
-            this.tbp_spielfeld.UseVisualStyleBackColor = true;
             // 
             // pic_spielfeld
             // 
@@ -437,6 +437,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Spiel";
             this.Text = "Spielfeld";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Spiel_Closing);
             this.tabControl.ResumeLayout(false);
             this.tbp_menu.ResumeLayout(false);
             this.tbp_schwierigkeit.ResumeLayout(false);
