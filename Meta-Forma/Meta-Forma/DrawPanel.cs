@@ -16,20 +16,23 @@ namespace Meta_Forma
 
         public DrawPanel()
         {
-            
             this.DoubleBuffered = true;
             Pen penGelb = new Pen(Color.Yellow, 1);
             Pen penRot = new Pen(Color.Red, 1);
             Pen penBlau = new Pen(Color.Blue, 1);
-            MyTriangle tg = new MyTriangle(penGelb, new Point(50, 510));
-            MyTriangle tr = new MyTriangle(penRot, new Point(380, 510));
-            MyTriangle tb = new MyTriangle(penBlau, new Point(710, 510));
-            MyRectangle rg = new MyRectangle(penGelb, new Point(160, 510));
-            MyRectangle rr = new MyRectangle(penRot, new Point(490, 510));
-            MyRectangle rb = new MyRectangle(penBlau, new Point(820, 510));
-            MyCircle cg = new MyCircle(penGelb, new Point(270, 510));
-            MyCircle cr = new MyCircle(penRot, new Point(600, 510));
-            MyCircle cb = new MyCircle(penBlau, new Point(930, 510));
+            MyTriangle tg = new MyTriangle(penGelb, new Point(50, 510), 4);
+            MyTriangle tr = new MyTriangle(penRot, new Point(380, 510), 7);
+            MyTriangle tb = new MyTriangle(penBlau, new Point(710, 510),1);
+            MyRectangle rg = new MyRectangle(penGelb, new Point(160, 510),6);
+            MyRectangle rr = new MyRectangle(penRot, new Point(490, 510),9);
+            MyRectangle rb = new MyRectangle(penBlau, new Point(820, 510),3);
+            MyCircle cg = new MyCircle(penGelb, new Point(270, 510),5);
+            MyCircle cr = new MyCircle(penRot, new Point(600, 510),8);
+            MyCircle cb = new MyCircle(penBlau, new Point(930, 510),2);
+            FieldPanel p0 = new FieldPanel(0, new Point(508,30));
+            FieldPanel p1 = new FieldPanel(1, new Point(654, 30));
+            this.Controls.Add(p0);
+            this.Controls.Add(p1);
             _graphicObjects.Add(tg);
             _graphicObjects.Add(tr);
             _graphicObjects.Add(tb);

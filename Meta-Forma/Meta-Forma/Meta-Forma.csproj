@@ -57,6 +57,9 @@
     <Compile Include="DrawPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FieldPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="level.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

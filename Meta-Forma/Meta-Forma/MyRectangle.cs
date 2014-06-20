@@ -9,13 +9,20 @@ namespace Meta_Forma
 {
     class MyRectangle : MyGraphicObject
     {
-        public MyRectangle(Pen pen, Point a)
+        private int key;
+        public MyRectangle(Pen pen, Point a, int key)
             : base(pen)
         {
+            this.key = key;
             int widthNheight = 100;
             Rectangle rect = new Rectangle(a.X - (widthNheight / 2), a.Y, widthNheight, widthNheight);
             Path.AddRectangle(rect);
         }
+        public int Key
+        {
+            get { return key; }
+        }
+
     }
 
 }
