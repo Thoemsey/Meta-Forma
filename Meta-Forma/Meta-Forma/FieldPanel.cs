@@ -24,7 +24,10 @@ namespace Meta_Forma
             this.BackColor = Color.Transparent;
             this.Visible = true;
             this.DoubleBuffered = true;
+            this.MouseUp += OnMouseUp;
         }
+
+       
 
         public SpielController Controller
         {
@@ -32,7 +35,7 @@ namespace Meta_Forma
             set { controller = value; }
         }
 
-        protected override void OnMouseUp(MouseEventArgs e)
+        protected void OnMouseUp(object sender, MouseEventArgs e)
         {
             base.OnMouseUp(e);
             if (controller.View.status != 0)
