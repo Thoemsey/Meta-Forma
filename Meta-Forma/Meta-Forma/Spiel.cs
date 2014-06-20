@@ -18,7 +18,10 @@ namespace Meta_Forma
 
         public Spiel()
         {
+            
             InitializeComponent();
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             pic_gelb.MouseEnter += new System.EventHandler(this.pic_gelb_MouseEnter);
             pic_gelb.MouseLeave += new System.EventHandler(this.pic_gelb_MouseLeave);
             pic_orange.MouseEnter += new System.EventHandler(this.pic_orange_MouseEnter);
@@ -38,6 +41,7 @@ namespace Meta_Forma
             get { return controller; }
             set { controller = value; }
         }
+
         
 
         private void cmd_beenden_Click(object sender, EventArgs e)
@@ -125,11 +129,12 @@ namespace Meta_Forma
             tabControl.SelectedTab = tbp_schwierigkeit;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void cmd_lvl1_Click(object sender, EventArgs e)
         {
             setLvl(lvl[0]);
             setLoesung(lvl[0]);
             tabControl.SelectedTab = tbp_spielfeld;
+            pic_regeln.SendToBack();
         }
 
         private void cmd_lvl2_Click(object sender, EventArgs e)
@@ -205,6 +210,11 @@ namespace Meta_Forma
         {
             //Handle event here
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
 
         

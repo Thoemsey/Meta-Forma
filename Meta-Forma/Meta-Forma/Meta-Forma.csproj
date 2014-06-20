@@ -54,6 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBase.cs" />
+    <Compile Include="DrawPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="level.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -75,6 +78,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="MyCircle.cs" />
+    <Compile Include="MyGraphicObject.cs" />
+    <Compile Include="MyRectangle.cs" />
+    <Compile Include="MyTriangle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Spiel.cs">
@@ -104,6 +111,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
@@ -150,6 +158,7 @@
     <Content Include="Resources\ampel\rotHover.png" />
     <Content Include="Resources\ampel\violett.png" />
     <Content Include="Resources\ampel\violettHover.png" />
+    <Content Include="Resources\Spielfeld\spielfeldHintergrund.png" />
     <Content Include="Resources\Spielfeld\blau41.jpg" />
     <Content Include="Resources\Spielfeld\blau42.jpg" />
     <Content Include="Resources\Spielfeld\gelb1.jpg" />

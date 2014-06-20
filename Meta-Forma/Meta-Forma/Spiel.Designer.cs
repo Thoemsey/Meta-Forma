@@ -46,8 +46,8 @@
             this.cmd_zurueckschwkt = new System.Windows.Forms.Button();
             this.cmd_lvl1 = new System.Windows.Forms.Button();
             this.tbp_spielfeld = new System.Windows.Forms.TabPage();
+            this.drawPanel1 = new Meta_Forma.DrawPanel();
             this.cmd_zuruecklvl = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pic_rot = new System.Windows.Forms.PictureBox();
             this.pic_blau = new System.Windows.Forms.PictureBox();
             this.pic_violett = new System.Windows.Forms.PictureBox();
@@ -55,7 +55,6 @@
             this.pic_orange = new System.Windows.Forms.PictureBox();
             this.pic_gelb = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pic_spielfeld = new System.Windows.Forms.PictureBox();
             this.pic_regeln = new System.Windows.Forms.PictureBox();
             this.tabControl.SuspendLayout();
             this.tbp_menu.SuspendLayout();
@@ -63,6 +62,7 @@
             this.pnl_ampel.SuspendLayout();
             this.tbp_level.SuspendLayout();
             this.tbp_spielfeld.SuspendLayout();
+            this.drawPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_rot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_blau)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_violett)).BeginInit();
@@ -70,7 +70,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_orange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_gelb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_spielfeld)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_regeln)).BeginInit();
             this.SuspendLayout();
             // 
@@ -292,15 +291,12 @@
             this.cmd_lvl1.TabIndex = 1;
             this.cmd_lvl1.Text = "000";
             this.cmd_lvl1.UseVisualStyleBackColor = false;
-            this.cmd_lvl1.Click += new System.EventHandler(this.button1_Click);
+            this.cmd_lvl1.Click += new System.EventHandler(this.cmd_lvl1_Click);
             // 
             // tbp_spielfeld
             // 
-            this.tbp_spielfeld.BackColor = System.Drawing.Color.White;
-            this.tbp_spielfeld.Controls.Add(this.pic_spielfeld);
-            this.tbp_spielfeld.Controls.Add(this.cmd_zuruecklvl);
-            this.tbp_spielfeld.Controls.Add(this.panel1);
-            this.tbp_spielfeld.Controls.Add(this.pic_regeln);
+            this.tbp_spielfeld.BackColor = System.Drawing.Color.Transparent;
+            this.tbp_spielfeld.Controls.Add(this.drawPanel1);
             this.tbp_spielfeld.Location = new System.Drawing.Point(4, 25);
             this.tbp_spielfeld.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbp_spielfeld.Name = "tbp_spielfeld";
@@ -308,6 +304,17 @@
             this.tbp_spielfeld.Size = new System.Drawing.Size(998, 694);
             this.tbp_spielfeld.TabIndex = 3;
             this.tbp_spielfeld.Text = "tbp_spielfeld";
+            // 
+            // drawPanel1
+            // 
+            this.drawPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.drawPanel1.BackgroundImage = global::Meta_Forma.Properties.Resources.spielfeldHintergrund;
+            this.drawPanel1.Controls.Add(this.cmd_zuruecklvl);
+            this.drawPanel1.Controls.Add(this.pic_regeln);
+            this.drawPanel1.Location = new System.Drawing.Point(8, 5);
+            this.drawPanel1.Name = "drawPanel1";
+            this.drawPanel1.Size = new System.Drawing.Size(990, 693);
+            this.drawPanel1.TabIndex = 9;
             // 
             // cmd_zuruecklvl
             // 
@@ -317,7 +324,7 @@
             this.cmd_zuruecklvl.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.cmd_zuruecklvl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmd_zuruecklvl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmd_zuruecklvl.Location = new System.Drawing.Point(3, 652);
+            this.cmd_zuruecklvl.Location = new System.Drawing.Point(13, 619);
             this.cmd_zuruecklvl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmd_zuruecklvl.Name = "cmd_zuruecklvl";
             this.cmd_zuruecklvl.Size = new System.Drawing.Size(305, 63);
@@ -325,14 +332,6 @@
             this.cmd_zuruecklvl.Text = "zurück";
             this.cmd_zuruecklvl.UseVisualStyleBackColor = false;
             this.cmd_zuruecklvl.Click += new System.EventHandler(this.cmd_zuruecklvl_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(3, 494);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(971, 153);
-            this.panel1.TabIndex = 1;
             // 
             // pic_rot
             // 
@@ -411,21 +410,10 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // pic_spielfeld
-            // 
-            this.pic_spielfeld.Image = global::Meta_Forma.Properties.Resources.spielfeld;
-            this.pic_spielfeld.Location = new System.Drawing.Point(499, 14);
-            this.pic_spielfeld.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pic_spielfeld.Name = "pic_spielfeld";
-            this.pic_spielfeld.Size = new System.Drawing.Size(475, 475);
-            this.pic_spielfeld.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_spielfeld.TabIndex = 8;
-            this.pic_spielfeld.TabStop = false;
-            // 
             // pic_regeln
             // 
             this.pic_regeln.Image = global::Meta_Forma.Properties.Resources.loading;
-            this.pic_regeln.Location = new System.Drawing.Point(3, 14);
+            this.pic_regeln.Location = new System.Drawing.Point(3, 12);
             this.pic_regeln.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pic_regeln.Name = "pic_regeln";
             this.pic_regeln.Size = new System.Drawing.Size(475, 475);
@@ -450,6 +438,7 @@
             this.pnl_ampel.ResumeLayout(false);
             this.tbp_level.ResumeLayout(false);
             this.tbp_spielfeld.ResumeLayout(false);
+            this.drawPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_rot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_blau)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_violett)).EndInit();
@@ -457,7 +446,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_orange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_gelb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_spielfeld)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_regeln)).EndInit();
             this.ResumeLayout(false);
 
@@ -488,9 +476,8 @@
         private System.Windows.Forms.Button cmd_zurueckhptm;
         private System.Windows.Forms.Button cmd_zurueckschwkt;
         private System.Windows.Forms.Button cmd_lvl2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pic_regeln;
         private System.Windows.Forms.Button cmd_zuruecklvl;
-        private System.Windows.Forms.PictureBox pic_spielfeld;
+        private DrawPanel drawPanel1;
     }
 }
