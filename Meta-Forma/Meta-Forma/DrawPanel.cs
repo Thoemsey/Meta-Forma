@@ -16,7 +16,7 @@ namespace Meta_Forma
 
         public DrawPanel()
         {
-            this.DoubleBuffered = true;
+            
             Pen penGelb = new Pen(Color.Yellow, 1);
             Pen penRot = new Pen(Color.Red, 1);
             Pen penBlau = new Pen(Color.Blue, 1);
@@ -56,8 +56,8 @@ namespace Meta_Forma
             _graphicObjects.Add(cg);
             _graphicObjects.Add(cr);
             _graphicObjects.Add(cb);
-            
 
+            this.DoubleBuffered = true;
             this.Invalidate();
             
         }

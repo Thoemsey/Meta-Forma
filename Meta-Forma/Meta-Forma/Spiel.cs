@@ -15,10 +15,10 @@ namespace Meta_Forma
         private SpielController controller;
         private List<int> lvl;
         private int[] loesung = new int[9];
-
+        public int[] versuch = new int[] {0,0,0,0,0,0,0,0,0 };
+        public int status = 0;
         public Spiel()
         {
-            
             InitializeComponent();
             this.MaximizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
