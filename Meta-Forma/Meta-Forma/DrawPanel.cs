@@ -11,7 +11,7 @@ namespace Meta_Forma
 {
     public class DrawPanel : Panel
     {
-        List<MyGraphicObject> _graphicObjects = new List<MyGraphicObject>();
+        public List<MyGraphicObject> _graphicObjects = new List<MyGraphicObject>();
         Rectangle _canvas;
         List<FieldPanel> fpArray = new List<FieldPanel>();
         private SpielController controller;
@@ -62,8 +62,11 @@ namespace Meta_Forma
             fpArray.Add(p6);
             fpArray.Add(p7);
             fpArray.Add(p8);
-            
 
+            foreach (FieldPanel fp in fpArray)
+            {
+                fp.DrawPanel = this;
+            }
             
 
             this.DoubleBuffered = true;
@@ -143,7 +146,7 @@ namespace Meta_Forma
         {
             base.OnMouseDown(e);
             // Wenn die Maus außerhalb der Zeichenfläche gedrückt wurde, wird abgebrochen.
-            if (!_canvas.Contains(e.Location)) return;
+            //if (!_canvas.Contains(e.Location)) return;
             // Anderenfalls wird die Liste mit den gezeichneten Objekten von hinten (damit
             // das oberste Objekte gefunden wird) durchgegangen und geprüft, über welchem
             // Objekt die Maus sich befindet. 
@@ -178,29 +181,37 @@ namespace Meta_Forma
         protected override void OnMouseUp(MouseEventArgs e)
         {
             base.OnMouseUp(e);
-            if (_movingGraphicObject != null)
-            {
-                _movingGraphicObject.Move(_movingGraphicObject.Start.X - _lastMouseLocation.X + 25, _movingGraphicObject.Start.Y - _lastMouseLocation.Y + 50);
-                //_movingGraphicObject.Reset();
-                this.Invalidate();
-            }
-            
             
             // Anderenfalls wird die Liste mit den gezeichneten Objekten von hinten (damit
             // das oberste Objekte gefunden wird) durchgegangen und geprüft, über welchem
             // Objekt die Maus sich befindet. 
             for (int i = fpArray.Count - 1; i >= 0; i--)
             {
-                
                 FieldPanel fp = fpArray[i];
                 if (fp.Hit(e.Location))
                 {
-                    controller.View.status = _movingGraphicObject.Key;
+                    if (_movingGraphicObject != null)
+                    {
+                        controller.View.status = _movingGraphicObject.Key;
+                    }
+                    else
+                    {
+                        controller.View.status = 0;
+                    }
+                    
                     fp.OnMouseUp(this, e);
-                    break;
+                    _movingGraphicObject = null;
+                    return;
                 }
             }
+            if (_movingGraphicObject != null)
+            {
+                _movingGraphicObject.Move(_movingGraphicObject.Start.X - _lastMouseLocation.X + 25, _movingGraphicObject.Start.Y - _lastMouseLocation.Y + 50);
+                //_movingGraphicObject.Reset();
+                this.Invalidate();
+            }
             _movingGraphicObject = null;
+
         }
 
         protected override void OnSizeChanged(EventArgs e)

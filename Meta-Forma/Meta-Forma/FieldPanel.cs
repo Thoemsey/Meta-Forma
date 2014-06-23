@@ -16,6 +16,7 @@ namespace Meta_Forma
         private SpielController controller;
         GraphicsPath _path = new GraphicsPath();
         static Pen HitTestPen = new Pen(Brushes.Black, 4);
+        private DrawPanel drawPanel;
         public FieldPanel(int key, Point position)
         {  
             this.key = key;
@@ -39,6 +40,11 @@ namespace Meta_Forma
             set { controller = value; }
         }
 
+        public DrawPanel DrawPanel
+        {
+            set { drawPanel = value; }
+        }
+
         public virtual bool Hit(Point pt)
         {
             return this.Bounds.Contains(pt);
@@ -53,6 +59,8 @@ namespace Meta_Forma
         {
             get { return _path; }
         }
+
+        
 
         public void OnMouseUp(object sender, MouseEventArgs e)
         {
@@ -71,7 +79,7 @@ namespace Meta_Forma
                     }
 
                     
-                    //Console.Write(controller.View.versuch[i]);
+                    Console.Write(controller.View.versuch[i]);
                 }
                 if (b)
                 {
@@ -88,16 +96,32 @@ namespace Meta_Forma
                         MessageBox.Show("YOU WON!!");
                     }
                 }
-                //Console.WriteLine();
+                Console.WriteLine();
             }
             else
             {
+
+                if (controller.View.versuch[key] != 0)
+                {
+                    foreach (MyGraphicObject go in drawPanel._graphicObjects)
+                    {
+                        if (go.Key == controller.View.versuch[key])
+                        {
+                            go.Move(go.Start.X - this.position.X -50, go.Start.Y - this.position.Y - 50);
+                            drawPanel.Invalidate();
+                            drawPanel.Update();
+                        }
+                    }
+                    //MyGraphicObject go = drawPanel._graphicObjects[controller.View.versuch[key]];
+                    
+                    
+                }
                 controller.View.versuch[key] = controller.View.status;
                 for (int i = 0; i < controller.View.versuch.Length; i++)
                 {
-                    //Console.Write(controller.View.versuch[i]);
+                    Console.Write(controller.View.versuch[i]);
                 }
-                //Console.WriteLine();
+                Console.WriteLine();
 
             }
             
