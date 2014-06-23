@@ -103,6 +103,16 @@ namespace Meta_Forma.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FoxMindLogo {
+            get {
+                object obj = ResourceManager.GetObject("FoxMindLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gelb {
             get {
                 object obj = ResourceManager.GetObject("gelb", resourceCulture);
@@ -186,6 +196,16 @@ namespace Meta_Forma.Properties {
         internal static System.Drawing.Bitmap loading {
             get {
                 object obj = ResourceManager.GetObject("loading", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MetaFormaLogo {
+            get {
+                object obj = ResourceManager.GetObject("MetaFormaLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -296,6 +316,36 @@ namespace Meta_Forma.Properties {
         internal static System.Drawing.Bitmap spielfeldHintergrund {
             get {
                 object obj = ResourceManager.GetObject("spielfeldHintergrund", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spielregel0 {
+            get {
+                object obj = ResourceManager.GetObject("spielregel0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spielregel1 {
+            get {
+                object obj = ResourceManager.GetObject("spielregel1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spielregel2 {
+            get {
+                object obj = ResourceManager.GetObject("spielregel2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

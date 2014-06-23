@@ -134,21 +134,7 @@ namespace Meta_Forma
         private void cmd_zurueckschwkt_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tbp_schwierigkeit;
-        }
-
-        private void cmd_lvl1_Click(object sender, EventArgs e)
-        {
-            setLvl(lvl[0]);
-            setLoesung(lvl[0]);
-            tabControl.SelectedTab = tbp_spielfeld;
-            pic_regeln.SendToBack();
-        }
-
-        private void cmd_lvl2_Click(object sender, EventArgs e)
-        {
-            setLvl(lvl[1]);
-            setLoesung(lvl[1]);
-            tabControl.SelectedTab = tbp_spielfeld;
+            list_levels.Items.Clear();
         }
 
         private void cmd_zuruecklvl_Click(object sender, EventArgs e)
@@ -202,8 +188,11 @@ namespace Meta_Forma
         private void setLvlText(int diffId)
         {
             lvl = Controller.DB.getLvlByDifficulty(diffId);
-            cmd_lvl1.Text = lvl[0].ToString();
-            cmd_lvl2.Text = lvl[1].ToString();
+            for (int i = 0; i < lvl.Count; i++)
+            {
+                list_levels.Items.Add(lvl[i]);
+            }
+            list_levels.SelectedIndex = 0;
         }
 
         private void setLoesung(int lvlId)
@@ -226,9 +215,53 @@ namespace Meta_Forma
             System.Windows.Forms.Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
+        private void cmd_go_Click(object sender, EventArgs e)
+        {
+            String selected = list_levels.SelectedItem.ToString();
+            setLvl((Convert.ToInt32(selected)));
+            setLoesung((Convert.ToInt32(selected)));
+            tabControl.SelectedTab = tbp_spielfeld;
+            pic_regeln.SendToBack();
+        }
+
+        private void cmd_anleitung_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tbp_anleitung;
+        }
+
+        private void cmd_wzumspiel_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tbp_schwierigkeit;
+        }
+
+        private void cmd_zurueckmenu_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tbp_menu;
+        }
+
+        private void cmd_p1_Click(object sender, EventArgs e)
+        {
+            cmd_p1.Enabled = false;
+            cmd_p2.Enabled = true;
+            cmd_p3.Enabled = true;
+            pic_anleitung.Image = Properties.Resources.spielregel0;
+        }
+
+        private void cmd_p2_Click(object sender, EventArgs e)
+        {
+            cmd_p1.Enabled = true;
+            cmd_p2.Enabled = false;
+            cmd_p3.Enabled = true;
+            pic_anleitung.Image = Properties.Resources.spielregel1;
+        }
+
+        private void cmd_p3_Click(object sender, EventArgs e)
+        {
+            cmd_p1.Enabled = true;
+            cmd_p2.Enabled = true;
+            cmd_p3.Enabled = false;
+            pic_anleitung.Image = Properties.Resources.spielregel2;
         }
     }
 }

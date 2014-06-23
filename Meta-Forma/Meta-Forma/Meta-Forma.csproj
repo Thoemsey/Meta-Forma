@@ -156,6 +156,8 @@
     <Content Include="Resources\ampel\gruenHover.png" />
     <Content Include="Resources\ampel\orange.png" />
     <Content Include="Resources\ampel\orangeHover.png" />
+    <Content Include="Resources\FoxMindLogo.png" />
+    <Content Include="Resources\MetaFormaLogo.png" />
     <Content Include="Resources\pfeil.png" />
     <Content Include="Resources\ampel\rot.png" />
     <Content Include="Resources\ampel\rotHover.png" />
@@ -176,6 +178,9 @@
     <Content Include="Resources\Spielfeld\spielfeld.png" />
     <Content Include="Resources\Spielfeld\violett46.jpg" />
     <Content Include="Resources\Spielfeld\violett47.jpg" />
+    <Content Include="Resources\spielregel0.png" />
+    <Content Include="Resources\spielregel1.png" />
+    <Content Include="Resources\spielregel2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
