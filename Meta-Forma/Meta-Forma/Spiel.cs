@@ -14,7 +14,7 @@ namespace Meta_Forma
     {
         private SpielController controller;
         private List<int> lvl;
-        private int[] loesung = new int[9];
+        public int[] loesung = new int[9];
         public int[] versuch = new int[] {0,0,0,0,0,0,0,0,0 };
         public int status = 0;
         public Spiel()
@@ -36,6 +36,11 @@ namespace Meta_Forma
             pic_rot.MouseLeave += new System.EventHandler(this.pic_rot_MouseLeave);
         }
         
+        public void dp1SetController(SpielController cont)
+        {
+            this.drawPanel1.Controller = cont;
+
+        }
         public SpielController Controller
         {
             get { return controller; }
@@ -53,6 +58,8 @@ namespace Meta_Forma
         private void cmd_zumSpiel_Click(object sender, EventArgs e)
         {
             tabControl.SelectedTab = tbp_schwierigkeit;
+            this.drawPanel1.Controller = controller;
+            this.drawPanel1.setFPController();
         }
 
         private void pic_gelb_MouseEnter(object sender, EventArgs e)
@@ -148,6 +155,13 @@ namespace Meta_Forma
         {
             tabControl.SelectedTab = tbp_level;
             pic_regeln.Image = Properties.Resources.loading;
+            controller.View.drawPanel1.removeGraphicObjects();
+            controller.View.drawPanel1.setGraphicObjects();
+
+            for (int i = 0; i < versuch.Length; i++)
+            {
+                versuch[i] = 0;
+            }
         }
 
         private void pic_violett_Click(object sender, EventArgs e)
@@ -199,9 +213,9 @@ namespace Meta_Forma
             {
                 char temp = sol.ElementAt(i);
                 loesung[i] = (int)Char.GetNumericValue(temp);
-                Console.Write(loesung[i]);
+                
             }
-            Console.Write("\n");
+            
 
         }
 
@@ -216,18 +230,5 @@ namespace Meta_Forma
         {
 
         }
-
-        
-
-
-        //Tets Bdrag&Drop button1
-
-       
-
-
-
-
-
-
     }
 }
