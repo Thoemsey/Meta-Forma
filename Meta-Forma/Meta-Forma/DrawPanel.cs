@@ -15,22 +15,26 @@ namespace Meta_Forma
         Rectangle _canvas;
         List<FieldPanel> fpArray = new List<FieldPanel>();
         private SpielController controller;
+        MyTriangle tg;
+        MyTriangle tr;
+        MyTriangle tb ;
+        MyRectangle rg ;
+        MyRectangle rr ;
+        MyRectangle rb ;
+        MyCircle cg ;
+        MyCircle cr ;
+        MyCircle cb ;
+        Pen penGelb;
+        Pen penRot;
+        Pen penBlau;
 
         public DrawPanel()
         {
             
-            Pen penGelb = new Pen(Color.Yellow, 1);
-            Pen penRot = new Pen(Color.Red, 1);
-            Pen penBlau = new Pen(Color.Blue, 1);
-            MyTriangle tg = new MyTriangle(penGelb, new Point(50, 510), 4);
-            MyTriangle tr = new MyTriangle(penRot, new Point(380, 510), 7);
-            MyTriangle tb = new MyTriangle(penBlau, new Point(710, 510),1);
-            MyRectangle rg = new MyRectangle(penGelb, new Point(160, 510),6);
-            MyRectangle rr = new MyRectangle(penRot, new Point(490, 510),9);
-            MyRectangle rb = new MyRectangle(penBlau, new Point(820, 510),3);
-            MyCircle cg = new MyCircle(penGelb, new Point(270, 510),5);
-            MyCircle cr = new MyCircle(penRot, new Point(600, 510),8);
-            MyCircle cb = new MyCircle(penBlau, new Point(930, 510),2);
+            penGelb = new Pen(Color.Yellow, 1);
+            penRot = new Pen(Color.Red, 1);
+            penBlau = new Pen(Color.Blue, 1);
+            setGraphicObjects();
             FieldPanel p0 = new FieldPanel(0, new Point(508,30));
             FieldPanel p1 = new FieldPanel(1, new Point(654, 30));
             FieldPanel p2 = new FieldPanel(2, new Point(800, 30));
@@ -58,15 +62,7 @@ namespace Meta_Forma
             fpArray.Add(p6);
             fpArray.Add(p7);
             fpArray.Add(p8);
-            _graphicObjects.Add(tg);
-            _graphicObjects.Add(tr);
-            _graphicObjects.Add(tb);
-            _graphicObjects.Add(rg);
-            _graphicObjects.Add(rr);
-            _graphicObjects.Add(rb);
-            _graphicObjects.Add(cg);
-            _graphicObjects.Add(cr);
-            _graphicObjects.Add(cb);
+            
 
             
 
@@ -86,6 +82,42 @@ namespace Meta_Forma
             {
                 panel.Controller = this.controller;
             }
+        }
+
+        public void setGraphicObjects()
+        {
+            tg = new MyTriangle(penGelb, new Point(50, 510), 4);
+            tr = new MyTriangle(penRot, new Point(380, 510), 7);
+            tb = new MyTriangle(penBlau, new Point(710, 510), 1);
+            rg = new MyRectangle(penGelb, new Point(160, 510), 6);
+            rr = new MyRectangle(penRot, new Point(490, 510), 9);
+            rb = new MyRectangle(penBlau, new Point(820, 510), 3);
+            cg = new MyCircle(penGelb, new Point(270, 510), 5);
+            cr = new MyCircle(penRot, new Point(600, 510), 8);
+            cb = new MyCircle(penBlau, new Point(930, 510), 2);
+            _graphicObjects.Add(tg);
+            _graphicObjects.Add(tr);
+            _graphicObjects.Add(tb);
+            _graphicObjects.Add(rg);
+            _graphicObjects.Add(rr);
+            _graphicObjects.Add(rb);
+            _graphicObjects.Add(cg);
+            _graphicObjects.Add(cr);
+            _graphicObjects.Add(cb);
+        }
+
+        public void removeGraphicObjects()
+        {
+            _graphicObjects.Remove(tg);
+            _graphicObjects.Remove(tr);
+            _graphicObjects.Remove(tb);
+            _graphicObjects.Remove(rg);
+            _graphicObjects.Remove(rr);
+            _graphicObjects.Remove(rb);
+            _graphicObjects.Remove(cg);
+            _graphicObjects.Remove(cr);
+            _graphicObjects.Remove(cb);
+
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -136,6 +168,7 @@ namespace Meta_Forma
                 // Mausposition ausgerechnet und das Objekt um diese verschoben.
                 _movingGraphicObject.Move(e.X - _lastMouseLocation.X, e.Y - _lastMouseLocation.Y);
                 _lastMouseLocation = e.Location;
+
                 // Hier könnte man noch optimieren, indem man immer nur den Bereich
                 // neuzeichnet, in dem das Objekt bewegt wurde.
                 this.Invalidate();
@@ -145,21 +178,29 @@ namespace Meta_Forma
         protected override void OnMouseUp(MouseEventArgs e)
         {
             base.OnMouseUp(e);
-            //if (!_canvas.Contains(e.Location)) return;
-            _movingGraphicObject = null;
+            if (_movingGraphicObject != null)
+            {
+                _movingGraphicObject.Move(_movingGraphicObject.Start.X - _lastMouseLocation.X + 25, _movingGraphicObject.Start.Y - _lastMouseLocation.Y + 50);
+                //_movingGraphicObject.Reset();
+                this.Invalidate();
+            }
+            
             
             // Anderenfalls wird die Liste mit den gezeichneten Objekten von hinten (damit
             // das oberste Objekte gefunden wird) durchgegangen und geprüft, über welchem
             // Objekt die Maus sich befindet. 
             for (int i = fpArray.Count - 1; i >= 0; i--)
             {
+                
                 FieldPanel fp = fpArray[i];
                 if (fp.Hit(e.Location))
                 {
+                    controller.View.status = _movingGraphicObject.Key;
                     fp.OnMouseUp(this, e);
                     break;
                 }
             }
+            _movingGraphicObject = null;
         }
 
         protected override void OnSizeChanged(EventArgs e)

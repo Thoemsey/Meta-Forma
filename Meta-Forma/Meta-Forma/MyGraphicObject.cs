@@ -20,10 +20,25 @@ namespace Meta_Forma
         Pen _pen;
         bool _bVisible = true;
         GraphicsPath _path = new GraphicsPath();
+        Point start;
+        private int key;
 
-        public MyGraphicObject(Pen pen)
+
+        public MyGraphicObject(Pen pen, Point p, int key)
         {
+            this.key = key;
+            this.start = p;
             _pen = pen;
+        }
+
+        public Point Start
+        {
+            get { return start; }
+        }
+
+        public int Key
+        {
+            get { return key; }
         }
 
         protected GraphicsPath Path
@@ -72,5 +87,14 @@ namespace Meta_Forma
             mat.Translate(deltaX, deltaY);
             _path.Transform(mat);
         }
+
+        public virtual void Reset()
+        {
+            Matrix mat = new Matrix();
+            mat.Translate(start.X, start.Y);
+            _path.Transform(mat);
+        }
+
+        
     }
 }

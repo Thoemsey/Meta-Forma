@@ -62,18 +62,43 @@ namespace Meta_Forma
             {
                 controller.View.versuch[key] = controller.View.status;
                 controller.View.status = 0;
+                bool b = true;
                 for (int i = 0; i < controller.View.versuch.Length; i++)
                 {
-                    Console.WriteLine(controller.View.versuch[i]);
+                    if (controller.View.versuch[i] == 0)
+                    {
+                        b = false;
+                    }
+
+                    
+                    //Console.Write(controller.View.versuch[i]);
                 }
+                if (b)
+                {
+                    bool sieg = true;
+                    for (int i = 0; i < controller.View.versuch.Length; i++)
+                    {
+                        if (controller.View.versuch[i] != controller.View.loesung[i])
+                        {
+                            sieg = false;
+                        }
+                    }
+                    if (sieg)
+                    {
+                        MessageBox.Show("YOU WON!!");
+                    }
+                }
+                //Console.WriteLine();
             }
             else
             {
                 controller.View.versuch[key] = controller.View.status;
                 for (int i = 0; i < controller.View.versuch.Length; i++)
                 {
-                    Console.WriteLine(controller.View.versuch[i]);
+                    //Console.Write(controller.View.versuch[i]);
                 }
+                //Console.WriteLine();
+
             }
             
         }
