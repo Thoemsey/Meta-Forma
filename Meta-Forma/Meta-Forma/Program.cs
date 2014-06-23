@@ -16,8 +16,10 @@ namespace Meta_Forma
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            SpielController spielController = new SpielController(new Spiel(), new DataBase());
+            Spiel game = new Spiel();
             
+            SpielController spielController = new SpielController(game, new DataBase());
+            //game.dp1SetController(spielController);
             
 
             spielController.Start();

@@ -34,6 +34,8 @@ namespace Meta_Forma
         {
             view.Visible = true;
         }
+
+        
         
     }
 }

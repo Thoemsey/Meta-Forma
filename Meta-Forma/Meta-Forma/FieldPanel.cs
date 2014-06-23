@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ namespace Meta_Forma
         private int key;
         private Point position;
         private SpielController controller;
+        GraphicsPath _path = new GraphicsPath();
+        static Pen HitTestPen = new Pen(Brushes.Black, 4);
         public FieldPanel(int key, Point position)
         {  
             this.key = key;
@@ -25,6 +28,7 @@ namespace Meta_Forma
             this.Visible = true;
             this.DoubleBuffered = true;
             this.MouseUp += OnMouseUp;
+            
         }
 
        
@@ -35,9 +39,25 @@ namespace Meta_Forma
             set { controller = value; }
         }
 
-        protected void OnMouseUp(object sender, MouseEventArgs e)
+        public virtual bool Hit(Point pt)
         {
-            base.OnMouseUp(e);
+            return this.Bounds.Contains(pt);
+            
+        }
+
+        public virtual bool Contains(Point pt)
+        {
+            return _path.IsVisible(pt);
+        }
+        protected GraphicsPath Path
+        {
+            get { return _path; }
+        }
+
+        public void OnMouseUp(object sender, MouseEventArgs e)
+        {
+            
+
             if (controller.View.status != 0)
             {
                 controller.View.versuch[key] = controller.View.status;
@@ -55,6 +75,7 @@ namespace Meta_Forma
                     Console.WriteLine(controller.View.versuch[i]);
                 }
             }
+            
         }
     }
 }
