@@ -68,6 +68,7 @@ namespace Meta_Forma
 
             if (controller.View.status != 0)
             {
+                feldLoeschen();
                 controller.View.versuch[key] = controller.View.status;
                 controller.View.status = 0;
                 bool b = true;
@@ -101,30 +102,35 @@ namespace Meta_Forma
             else
             {
 
-                if (controller.View.versuch[key] != 0)
-                {
-                    foreach (MyGraphicObject go in drawPanel._graphicObjects)
-                    {
-                        if (go.Key == controller.View.versuch[key])
-                        {
-                            go.Move(go.Start.X - this.position.X -50, go.Start.Y - this.position.Y - 50);
-                            drawPanel.Invalidate();
-                            drawPanel.Update();
-                        }
-                    }
-                    //MyGraphicObject go = drawPanel._graphicObjects[controller.View.versuch[key]];
-                    
-                    
-                }
-                controller.View.versuch[key] = controller.View.status;
-                for (int i = 0; i < controller.View.versuch.Length; i++)
-                {
-                    Console.Write(controller.View.versuch[i]);
-                }
-                Console.WriteLine();
+                feldLoeschen();
 
             }
             
+        }
+
+        public void feldLoeschen()
+        {
+            if (controller.View.versuch[key] != 0)
+            {
+                foreach (MyGraphicObject go in drawPanel._graphicObjects)
+                {
+                    if (go.Key == controller.View.versuch[key])
+                    {
+                        go.Move(go.Start.X - this.position.X - 50, go.Start.Y - this.position.Y - 50);
+                        drawPanel.Invalidate();
+                        drawPanel.Update();
+                    }
+                }
+                //MyGraphicObject go = drawPanel._graphicObjects[controller.View.versuch[key]];
+
+
+            }
+            controller.View.versuch[key] = controller.View.status;
+            for (int i = 0; i < controller.View.versuch.Length; i++)
+            {
+                Console.Write(controller.View.versuch[i]);
+            }
+            Console.WriteLine();
         }
     }
 }
