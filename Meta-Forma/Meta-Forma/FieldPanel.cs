@@ -95,7 +95,7 @@ namespace Meta_Forma
                     }
                     if (sieg)
                     {
-                        controller.View.lblWinLoseChange("You won!", Color.Green);
+                        controller.View.lblWinLoseChange("You won!", Color.LightGreen);
                     }
                     else if (!sieg)
                     {
