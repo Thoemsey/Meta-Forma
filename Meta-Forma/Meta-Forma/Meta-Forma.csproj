@@ -87,6 +87,11 @@
     <Compile Include="MyTriangle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Spiel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,14 +104,9 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Spiel.resx">
       <DependentUpon>Spiel.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +163,8 @@
     <Content Include="Resources\ampel\rotHover.png" />
     <Content Include="Resources\ampel\violett.png" />
     <Content Include="Resources\ampel\violettHover.png" />
+    <Content Include="Resources\Spielfeld\rot51.jpg" />
+    <Content Include="Resources\Spielfeld\rot52.jpg" />
     <Content Include="Resources\Spielfeld\spielfeldHintergrund.png" />
     <Content Include="Resources\Spielfeld\blau41.jpg" />
     <Content Include="Resources\Spielfeld\blau42.jpg" />
@@ -173,8 +175,6 @@
     <Content Include="Resources\Spielfeld\loading.gif" />
     <Content Include="Resources\Spielfeld\orange15.jpg" />
     <Content Include="Resources\Spielfeld\orange20.jpg" />
-    <Content Include="Resources\Spielfeld\rot50.jpg" />
-    <Content Include="Resources\Spielfeld\rot51.jpg" />
     <Content Include="Resources\Spielfeld\spielfeld.png" />
     <Content Include="Resources\Spielfeld\violett46.jpg" />
     <Content Include="Resources\Spielfeld\violett47.jpg" />
