@@ -150,6 +150,7 @@ namespace Meta_Forma
             {
                 versuch[i] = 0;
             }
+            this.lblWinLoseChange("playing...", Color.White);
         }
         private void cmd_Menu_Click(object sender, EventArgs e)
         {
@@ -165,6 +166,7 @@ namespace Meta_Forma
                 versuch[i] = 0;
             }
             list_levels.Items.Clear();
+            this.lblWinLoseChange("playing...", Color.White);
         }
 
         public void lblWinLoseChange(String text, Color color)
