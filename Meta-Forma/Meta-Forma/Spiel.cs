@@ -163,10 +163,10 @@ namespace Meta_Forma
             list_levels.Items.Clear();
         }
 
-        public void lblWinLoseChange(String text)
+        public void lblWinLoseChange(String text, Color color)
         {
             this.lblWinLose.Text = text;
-            
+            this.pnlWinLose.BackColor = color;
         }
 
         private void pic_violett_Click(object sender, EventArgs e)

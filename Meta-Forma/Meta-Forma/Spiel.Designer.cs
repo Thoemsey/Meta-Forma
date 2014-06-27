@@ -67,6 +67,7 @@
             this.cmd_wzumspiel = new System.Windows.Forms.Button();
             this.cmd_zurueckmenu = new System.Windows.Forms.Button();
             this.pic_anleitung = new System.Windows.Forms.PictureBox();
+            this.pnlWinLose = new System.Windows.Forms.Panel();
             this.tabControl.SuspendLayout();
             this.tbp_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -85,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_regeln)).BeginInit();
             this.tbp_anleitung.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_anleitung)).BeginInit();
+            this.pnlWinLose.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIcon1
@@ -427,7 +429,7 @@
             this.drawPanel1.BackColor = System.Drawing.Color.Transparent;
             this.drawPanel1.BackgroundImage = global::Meta_Forma.Properties.Resources.spielfeldHintergrund;
             this.drawPanel1.Controller = null;
-            this.drawPanel1.Controls.Add(this.lblWinLose);
+            this.drawPanel1.Controls.Add(this.pnlWinLose);
             this.drawPanel1.Controls.Add(this.cmd_Menu);
             this.drawPanel1.Controls.Add(this.cmd_zuruecklvl);
             this.drawPanel1.Controls.Add(this.pic_regeln);
@@ -442,7 +444,7 @@
             this.lblWinLose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(201)))), ((int)(((byte)(230)))));
             this.lblWinLose.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblWinLose.Font = new System.Drawing.Font("Monotype Corsiva", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWinLose.Location = new System.Drawing.Point(337, 619);
+            this.lblWinLose.Location = new System.Drawing.Point(3, 3);
             this.lblWinLose.MinimumSize = new System.Drawing.Size(305, 63);
             this.lblWinLose.Name = "lblWinLose";
             this.lblWinLose.Size = new System.Drawing.Size(305, 63);
@@ -607,6 +609,14 @@
             this.pic_anleitung.TabIndex = 8;
             this.pic_anleitung.TabStop = false;
             // 
+            // pnlWinLose
+            // 
+            this.pnlWinLose.Controls.Add(this.lblWinLose);
+            this.pnlWinLose.Location = new System.Drawing.Point(336, 617);
+            this.pnlWinLose.Name = "pnlWinLose";
+            this.pnlWinLose.Size = new System.Drawing.Size(311, 69);
+            this.pnlWinLose.TabIndex = 10;
+            // 
             // Spiel
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -633,10 +643,11 @@
             this.tbp_level.ResumeLayout(false);
             this.tbp_spielfeld.ResumeLayout(false);
             this.drawPanel1.ResumeLayout(false);
-            this.drawPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_regeln)).EndInit();
             this.tbp_anleitung.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_anleitung)).EndInit();
+            this.pnlWinLose.ResumeLayout(false);
+            this.pnlWinLose.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -680,5 +691,6 @@
         private System.Windows.Forms.Button cmd_p1;
         private System.Windows.Forms.Label lblWinLose;
         private System.Windows.Forms.Button cmd_Menu;
+        private System.Windows.Forms.Panel pnlWinLose;
     }
 }

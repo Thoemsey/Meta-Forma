@@ -95,22 +95,22 @@ namespace Meta_Forma
                     }
                     if (sieg)
                     {
-                        controller.View.lblWinLoseChange("You won!");
+                        controller.View.lblWinLoseChange("You won!", Color.Green);
                     }
                     else if (!sieg)
                     {
-                        controller.View.lblWinLoseChange("It's wrong!");
+                        controller.View.lblWinLoseChange("It's wrong!", Color.Red);
                     }
                     
                 }
                 else
                 {
-                    controller.View.lblWinLoseChange("playing...");
+                    controller.View.lblWinLoseChange("playing...", Color.White);
                 }
             }
             else
             {
-                controller.View.lblWinLoseChange("playing...");
+                controller.View.lblWinLoseChange("playing...", Color.White);
                 feldLoeschen();
 
             }
