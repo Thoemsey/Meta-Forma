@@ -65,28 +65,35 @@ namespace Meta_Forma
         public void OnMouseUp(object sender, MouseEventArgs e)
         {
             
-
+            //Wenn auf einem Spielfeld Mouseup ausgeführt wird,  wird überprüft ob auf diesem Feld ein Stein liegt
+            
             if (controller.View.status != 0)
             {
+                //wenn ein Stein darauf liegt, wird dieser wieder zurück gesetzt und die Variable um diesen Wert gekürzt
+                //wenn man gleichzeitig einen Stein bewegt hat, wird dieser in das Feld gespeichert
                 feldLoeschen();
                 controller.View.versuch[key] = controller.View.status;
                 controller.View.status = 0;
                 bool b = true;
                 for (int i = 0; i < controller.View.versuch.Length; i++)
                 {
+                    //es wird überprüft ob in jedem Feld ein Stein liegt
                     if (controller.View.versuch[i] == 0)
                     {
                         b = false;
                     }
 
                     
-                    Console.Write(controller.View.versuch[i]);
+                    
                 }
                 if (b)
                 {
+                    //Wenn in jedem Feld ein Stein Liegt wird überprüft ob jeder Stein an dem der lösung entsprechenden
+                    //Platz liegt
                     bool sieg = true;
                     for (int i = 0; i < controller.View.versuch.Length; i++)
                     {
+                        //Wenn ein Stein an der Falschen Position liegt, wird die variable auf false gesetzt
                         if (controller.View.versuch[i] != controller.View.loesung[i])
                         {
                             sieg = false;
@@ -95,21 +102,29 @@ namespace Meta_Forma
                     }
                     if (sieg)
                     {
+                        //Falls alle Steine richtig liegen, wird das Label mit You won beschriftet und erhält
+                        //einen grünen Rahmen
                         controller.View.lblWinLoseChange("You won!", Color.LightGreen);
                     }
                     else if (!sieg)
                     {
+                        //andernfalls wird It's wrong ausgegeben und das Label erhält einen roten Hintergrund
                         controller.View.lblWinLoseChange("It's wrong!", Color.Red);
                     }
                     
                 }
                 else
                 {
+                    //Wenn auf irgend einem Spielfeld noch kein Stein liegt, steht auf dem label
+                    //playing.. und der Hintergrund bleibt weiss (unsichtbar)
                     controller.View.lblWinLoseChange("playing...", Color.White);
                 }
             }
             else
             {
+                //Wenn alle Steine gelegt sind und einer wieder gelöscht wird, steht auf dem label
+                //wieder playing.. und der Hintergrund wird wieder weiss (unsichtbar)
+                
                 controller.View.lblWinLoseChange("playing...", Color.White);
                 feldLoeschen();
 
@@ -119,10 +134,13 @@ namespace Meta_Forma
 
         public void feldLoeschen()
         {
+            //diese Funktion löscht den Wert des Spielsteines aus dem Spielfeld und setzt seine Postition
+            //wieder auf seine Startposition zurück
             if (controller.View.versuch[key] != 0)
             {
                 foreach (MyGraphicObject go in drawPanel._graphicObjects)
                 {
+                    //hier wird überprüft, welches Objekt sich in dem Panel befindet
                     if (go.Key == controller.View.versuch[key])
                     {
                         go.Move(go.Start.X - this.position.X - 50, go.Start.Y - this.position.Y - 50);
@@ -130,16 +148,16 @@ namespace Meta_Forma
                         drawPanel.Update();
                     }
                 }
-                //MyGraphicObject go = drawPanel._graphicObjects[controller.View.versuch[key]];
+                
 
 
             }
             controller.View.versuch[key] = controller.View.status;
             for (int i = 0; i < controller.View.versuch.Length; i++)
             {
-                Console.Write(controller.View.versuch[i]);
+                
             }
-            Console.WriteLine();
+            
         }
     }
 }

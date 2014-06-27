@@ -11,10 +11,9 @@ namespace Meta_Forma
 {
     public class DataBase
     {
-        private SpielController controller;
-        
-        
 
+        //Datenbankanbindung
+        private SpielController controller;
         public SpielController Controller
         {
             get { return controller; }
@@ -22,6 +21,7 @@ namespace Meta_Forma
         }
         public String getLoesungById(int id)
         {
+            //Bei angabe des lvls erhält man die Lösung als String zurück
             using (Entities context = new Entities())
             {
                 loesung sol = context.loesung.FirstOrDefault(loes => loes.loesung_id == id);
@@ -38,6 +38,7 @@ namespace Meta_Forma
 
         public String getRulesById(int id)
         {
+            //bei angabe des Levels erhält man den Pfad zum Bild der regeln zurück
             using (Entities context = new Entities())
             {
                 level lvl = context.level.FirstOrDefault(rule => rule.level_id == id);
@@ -54,6 +55,7 @@ namespace Meta_Forma
 
         public List<int> getLvlByDifficulty(int diff)
         {
+            //bei angabe der Schwierigkeit erhält man die dazugehörigen Lvl zurück
             using (Entities context = new Entities())
             {
 

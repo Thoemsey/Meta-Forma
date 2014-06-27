@@ -10,6 +10,7 @@ namespace Meta_Forma
 {
     class MyCircle : MyGraphicObject
     {
+        //Zeichnet einen kreis
         public MyCircle(Pen pen, Point top, int key)
             : base(pen,top,key)
         {

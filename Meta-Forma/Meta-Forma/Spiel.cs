@@ -57,11 +57,15 @@ namespace Meta_Forma
 
         private void cmd_zumSpiel_Click(object sender, EventArgs e)
         {
+            //man gerät zur Schwierigkeitsauswahl
             tabControl.SelectedTab = tbp_schwierigkeit;
             this.drawPanel1.Controller = controller;
             this.drawPanel1.setFPController();
         }
 
+
+        //Von hier an ist die Ampel codiert
+        //beim mousehover ändert die Farbe der Ampel
         private void pic_gelb_MouseEnter(object sender, EventArgs e)
         {
             pic_gelb.Image = Properties.Resources.gelbHover;
@@ -81,7 +85,6 @@ namespace Meta_Forma
         private void pic_gruen_MouseEnter(object sender, EventArgs e)
         {
             pic_gruen.Image = Properties.Resources.gruenHover;
-            
         }
         private void pic_gruen_MouseLeave(object sender, EventArgs e)
         {
@@ -111,15 +114,11 @@ namespace Meta_Forma
         {
             pic_rot.Image = Properties.Resources.rot;
         }
-
         private void pic_gelb_Click(object sender, EventArgs e)
         {
             setLvlText(1);
             tabControl.SelectedTab = tbp_level;
         }
-
-
-
         private void pic_rot_Click(object sender, EventArgs e)
         {
             setLvlText(6);
@@ -128,17 +127,20 @@ namespace Meta_Forma
 
         private void cmd_zurueckhptm_Click(object sender, EventArgs e)
         {
+            //man gerät zurück zum Startmenu
             tabControl.SelectedTab = tbp_menu;
         }
 
         private void cmd_zurueckschwkt_Click(object sender, EventArgs e)
         {
+            //man verlässt die Levelauswahl und gerät wieder zur Schwierigkeitsauswahl
             tabControl.SelectedTab = tbp_schwierigkeit;
             list_levels.Items.Clear();
         }
 
         private void cmd_zuruecklvl_Click(object sender, EventArgs e)
         {
+            //Man verlässt das Spiel und gerät wieder in die Levelauswahl
             tabControl.SelectedTab = tbp_level;
             pic_regeln.Image = Properties.Resources.loading;
             controller.View.drawPanel1.removeGraphicObjects();
@@ -151,6 +153,8 @@ namespace Meta_Forma
         }
         private void cmd_Menu_Click(object sender, EventArgs e)
         {
+            //wenn man während dem Spiel den Menu Button klickt, werden alle Steine resetet
+            //das Spiel wird so zurückgesetzt, wie wenn man es gerade erst gestartet hätte
             tabControl.SelectedTab = tbp_menu;
             pic_regeln.Image = Properties.Resources.loading;
             controller.View.drawPanel1.removeGraphicObjects();
@@ -165,6 +169,7 @@ namespace Meta_Forma
 
         public void lblWinLoseChange(String text, Color color)
         {
+            //wechselt die Farbe und den Text des Feldes, das anzeigt ob die Steine korrekt oder falsch gelegt sind
             this.lblWinLose.Text = text;
             this.pnlWinLose.BackColor = color;
         }

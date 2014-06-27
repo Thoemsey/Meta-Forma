@@ -9,6 +9,7 @@ namespace Meta_Forma
 {
     class MyTriangle : MyGraphicObject
     {
+        //Zeichnet ein Dreieck
         public MyTriangle(Pen pen, Point a, int key)
             : base(pen,a,key)
         {

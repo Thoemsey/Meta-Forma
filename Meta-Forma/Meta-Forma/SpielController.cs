@@ -13,6 +13,7 @@ namespace Meta_Forma
 
         public SpielController(Spiel view, DataBase db)
         {
+            //Controller setzen, der alle Objekte miteinander verbindet
             view.Controller = this;
             db.Controller = this;
             this.view = view;

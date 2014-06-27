@@ -9,6 +9,7 @@ namespace Meta_Forma
 {
     class MyRectangle : MyGraphicObject
     {
+        //Zeichnet ein Vierreck, in unserem Falle ein Quadrat
         public MyRectangle(Pen pen, Point a, int key)
             : base(pen,a,key)
         {
