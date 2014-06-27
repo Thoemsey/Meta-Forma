@@ -56,6 +56,8 @@
             this.cmd_zurueckschwkt = new System.Windows.Forms.Button();
             this.tbp_spielfeld = new System.Windows.Forms.TabPage();
             this.drawPanel1 = new Meta_Forma.DrawPanel();
+            this.lblWinLose = new System.Windows.Forms.Label();
+            this.cmd_Menu = new System.Windows.Forms.Button();
             this.cmd_zuruecklvl = new System.Windows.Forms.Button();
             this.pic_regeln = new System.Windows.Forms.PictureBox();
             this.tbp_anleitung = new System.Windows.Forms.TabPage();
@@ -425,12 +427,45 @@
             this.drawPanel1.BackColor = System.Drawing.Color.Transparent;
             this.drawPanel1.BackgroundImage = global::Meta_Forma.Properties.Resources.spielfeldHintergrund;
             this.drawPanel1.Controller = null;
+            this.drawPanel1.Controls.Add(this.lblWinLose);
+            this.drawPanel1.Controls.Add(this.cmd_Menu);
             this.drawPanel1.Controls.Add(this.cmd_zuruecklvl);
             this.drawPanel1.Controls.Add(this.pic_regeln);
             this.drawPanel1.Location = new System.Drawing.Point(8, 5);
             this.drawPanel1.Name = "drawPanel1";
             this.drawPanel1.Size = new System.Drawing.Size(990, 693);
             this.drawPanel1.TabIndex = 9;
+            // 
+            // lblWinLose
+            // 
+            this.lblWinLose.AutoSize = true;
+            this.lblWinLose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(201)))), ((int)(((byte)(230)))));
+            this.lblWinLose.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblWinLose.Font = new System.Drawing.Font("Monotype Corsiva", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWinLose.Location = new System.Drawing.Point(337, 619);
+            this.lblWinLose.MinimumSize = new System.Drawing.Size(305, 63);
+            this.lblWinLose.Name = "lblWinLose";
+            this.lblWinLose.Size = new System.Drawing.Size(305, 63);
+            this.lblWinLose.TabIndex = 9;
+            this.lblWinLose.Text = "playing...";
+            this.lblWinLose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cmd_Menu
+            // 
+            this.cmd_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(201)))), ((int)(((byte)(230)))));
+            this.cmd_Menu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
+            this.cmd_Menu.FlatAppearance.BorderSize = 2;
+            this.cmd_Menu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.cmd_Menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmd_Menu.Location = new System.Drawing.Point(662, 619);
+            this.cmd_Menu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmd_Menu.Name = "cmd_Menu";
+            this.cmd_Menu.Size = new System.Drawing.Size(305, 63);
+            this.cmd_Menu.TabIndex = 7;
+            this.cmd_Menu.Text = "Menü";
+            this.cmd_Menu.UseVisualStyleBackColor = false;
+            this.cmd_Menu.Click += new System.EventHandler(this.cmd_Menu_Click);
             // 
             // cmd_zuruecklvl
             // 
@@ -598,6 +633,7 @@
             this.tbp_level.ResumeLayout(false);
             this.tbp_spielfeld.ResumeLayout(false);
             this.drawPanel1.ResumeLayout(false);
+            this.drawPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_regeln)).EndInit();
             this.tbp_anleitung.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_anleitung)).EndInit();
@@ -642,5 +678,7 @@
         private System.Windows.Forms.Button cmd_p2;
         private System.Windows.Forms.Button cmd_p3;
         private System.Windows.Forms.Button cmd_p1;
+        private System.Windows.Forms.Label lblWinLose;
+        private System.Windows.Forms.Button cmd_Menu;
     }
 }

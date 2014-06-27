@@ -91,17 +91,26 @@ namespace Meta_Forma
                         {
                             sieg = false;
                         }
+                        
                     }
                     if (sieg)
                     {
-                        MessageBox.Show("YOU WON!!");
+                        controller.View.lblWinLoseChange("You won!");
                     }
+                    else if (!sieg)
+                    {
+                        controller.View.lblWinLoseChange("It's wrong!");
+                    }
+                    
                 }
-                Console.WriteLine();
+                else
+                {
+                    controller.View.lblWinLoseChange("playing...");
+                }
             }
             else
             {
-
+                controller.View.lblWinLoseChange("playing...");
                 feldLoeschen();
 
             }

@@ -149,6 +149,25 @@ namespace Meta_Forma
                 versuch[i] = 0;
             }
         }
+        private void cmd_Menu_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedTab = tbp_menu;
+            pic_regeln.Image = Properties.Resources.loading;
+            controller.View.drawPanel1.removeGraphicObjects();
+            controller.View.drawPanel1.setGraphicObjects();
+
+            for (int i = 0; i < versuch.Length; i++)
+            {
+                versuch[i] = 0;
+            }
+            list_levels.Items.Clear();
+        }
+
+        public void lblWinLoseChange(String text)
+        {
+            this.lblWinLose.Text = text;
+            
+        }
 
         private void pic_violett_Click(object sender, EventArgs e)
         {
